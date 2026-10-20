@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,10 +35,17 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        [x-cloak] { display: none !important; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
 </head>
+
 <body class="bg-slate-100 text-slate-800 antialiased" x-data="appData()">
 
     <!-- WRAPPER CHÍNH -->
@@ -47,33 +55,44 @@
         <header class="bg-brand-900 text-white sticky top-0 z-50 shadow-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
-                    
+
                     <!-- Logo -->
                     <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-white text-xl font-black shadow-lg">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-white text-xl font-black shadow-lg">
                             <i class="fa-solid fa-wheat-awn"></i>
                         </div>
                         <div>
                             <span class="text-xl font-extrabold tracking-tight text-white">AgriConnect</span>
-                            <span class="hidden sm:inline-block text-[11px] text-emerald-300 ml-2 font-medium bg-brand-800 px-2 py-0.5 rounded-full border border-emerald-500/30">Nông Sản Tận Vườn</span>
+                            <span
+                                class="hidden sm:inline-block text-[11px] text-emerald-300 ml-2 font-medium bg-brand-800 px-2 py-0.5 rounded-full border border-emerald-500/30">Nông
+                                Sản Tận Vườn</span>
                         </div>
                     </div>
 
                     <!-- Thanh Chuyển Page (Chức năng Demo) -->
                     <nav class="hidden md:flex space-x-1">
-                        <button @click="activePage = 'farmer'" :class="activePage === 'farmer' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'" class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
+                        <button @click="activePage = 'farmer'"
+                            :class="activePage === 'farmer' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'"
+                            class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
                             <i class="fa-solid fa-tractor"></i>
                             <span>1. Trang Nông Dân</span>
                         </button>
-                        <button @click="activePage = 'buyer'" :class="activePage === 'buyer' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'" class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
+                        <button @click="activePage = 'buyer'"
+                            :class="activePage === 'buyer' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'"
+                            class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
                             <i class="fa-solid fa-store"></i>
                             <span>2. Sàn Thương Gia</span>
                         </button>
-                        <button @click="activePage = 'inspection'" :class="activePage === 'inspection' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'" class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
+                        <button @click="activePage = 'inspection'"
+                            :class="activePage === 'inspection' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'"
+                            class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
                             <i class="fa-solid fa-clipboard-check"></i>
                             <span>3. Khảo Sát Vườn</span>
                         </button>
-                        <button @click="activePage = 'admin'" :class="activePage === 'admin' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'" class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
+                        <button @click="activePage = 'admin'"
+                            :class="activePage === 'admin' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'"
+                            class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
                             <i class="fa-solid fa-user-shield"></i>
                             <span>4. Portal Admin</span>
                         </button>
@@ -87,9 +106,11 @@
                                 activePage === 'buyer' ? '🏢 VinaAgr Export (Thương Gia)' :
                                 activePage === 'inspection' ? '🚚 NV Thẩm Định Thực Địa' : '🛡️ Quản Trị Viên Admin'
                             "></p>
-                            <p class="text-[10px] text-emerald-300" x-text="'Role đang xem: ' + activePage.toUpperCase()"></p>
+                            <p class="text-[10px] text-emerald-300"
+                                x-text="'Role đang xem: ' + activePage.toUpperCase()"></p>
                         </div>
-                        <div class="w-9 h-9 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-sm shadow">
+                        <div
+                            class="w-9 h-9 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-sm shadow">
                             <i :class="
                                 activePage === 'farmer' ? 'fa-solid fa-user-farmer' :
                                 activePage === 'buyer' ? 'fa-solid fa-briefcase' :
@@ -103,10 +124,16 @@
 
             <!-- Mobile Nav -->
             <div class="md:hidden flex bg-brand-800 text-center border-t border-brand-700 text-xs text-white">
-                <button @click="activePage = 'farmer'" :class="activePage === 'farmer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">👨‍🌾 Nông Dân</button>
-                <button @click="activePage = 'buyer'" :class="activePage === 'buyer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">🏢 Thương Gia</button>
-                <button @click="activePage = 'inspection'" :class="activePage === 'inspection' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">📋 Khảo Sát</button>
-                <button @click="activePage = 'admin'" :class="activePage === 'admin' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">🛡️ Admin</button>
+                <button @click="activePage = 'farmer'"
+                    :class="activePage === 'farmer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">👨‍🌾 Nông
+                    Dân</button>
+                <button @click="activePage = 'buyer'" :class="activePage === 'buyer' ? 'bg-emerald-600 font-bold' : ''"
+                    class="flex-1 py-2.5">🏢 Thương Gia</button>
+                <button @click="activePage = 'inspection'"
+                    :class="activePage === 'inspection' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">📋 Khảo
+                    Sát</button>
+                <button @click="activePage = 'admin'" :class="activePage === 'admin' ? 'bg-emerald-600 font-bold' : ''"
+                    class="flex-1 py-2.5">🛡️ Admin</button>
             </div>
         </header>
 
@@ -117,18 +144,24 @@
             <!-- PAGE 1: FARMER PAGE (TRANG NÔNG DÂN ĐĂNG HÀNG & CHỌN THƯƠNG GIA) -->
             <!-- ========================================================================= -->
             <div x-show="activePage === 'farmer'" class="space-y-6" x-cloak>
-                
+
                 <!-- Welcome Banner -->
-                <div class="bg-gradient-to-r from-brand-900 to-brand-700 text-white p-6 rounded-2xl shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div
+                    class="bg-gradient-to-r from-brand-900 to-brand-700 text-white p-6 rounded-2xl shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                     <div class="space-y-1">
-                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/30 border border-emerald-400/30 rounded-full text-xs font-semibold text-emerald-200">
-                            <i class="fa-solid fa-circle text-emerald-400 text-[8px] animate-pulse"></i> Ứng dụng dành cho Người sản xuất / Nông Dân
+                        <div
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/30 border border-emerald-400/30 rounded-full text-xs font-semibold text-emerald-200">
+                            <i class="fa-solid fa-circle text-emerald-400 text-[8px] animate-pulse"></i> Ứng dụng dành
+                            cho Người sản xuất / Nông Dân
                         </div>
                         <h2 class="text-2xl font-black">Xin chào Chú Hai Xoàn! 👋</h2>
-                        <p class="text-xs text-emerald-100">Lô Sầu Riêng Ri6 tại Cái Bè đang có <strong class="text-amber-300 font-bold">3 thương gia chào giá mua</strong>. Mức giá cao nhất: <strong class="text-amber-300 font-black text-sm">85.000đ / kg</strong>.</p>
+                        <p class="text-xs text-emerald-100">Lô Sầu Riêng Ri6 tại Cái Bè đang có <strong
+                                class="text-amber-300 font-bold">3 thương gia chào giá mua</strong>. Mức giá cao nhất:
+                            <strong class="text-amber-300 font-black text-sm">85.000đ / kg</strong>.</p>
                     </div>
 
-                    <button @click="showAddModal = true" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-5 py-3 rounded-xl shadow-md flex items-center gap-2 text-sm transition-all shrink-0">
+                    <button @click="showAddModal = true"
+                        class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-5 py-3 rounded-xl shadow-md flex items-center gap-2 text-sm transition-all shrink-0">
                         <i class="fa-solid fa-plus-circle text-base"></i>
                         <span>Đăng Lô Nông Sản Mới</span>
                     </button>
@@ -137,22 +170,30 @@
                 <!-- Farmer Stats -->
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                        <span class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded">Lô Đang Bán</span>
+                        <span
+                            class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded">Lô
+                            Đang Bán</span>
                         <h3 class="text-xl font-bold text-slate-900 mt-2">1 Lô Hàng</h3>
                         <p class="text-xs text-slate-500">Sầu Riêng Ri6 (8 Tấn)</p>
                     </div>
                     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                        <span class="text-[10px] font-extrabold text-amber-700 uppercase tracking-wider bg-amber-50 px-2 py-0.5 rounded">Báo Giá Mới</span>
+                        <span
+                            class="text-[10px] font-extrabold text-amber-700 uppercase tracking-wider bg-amber-50 px-2 py-0.5 rounded">Báo
+                            Giá Mới</span>
                         <h3 class="text-xl font-bold text-slate-900 mt-2">3 Đề Nghị</h3>
                         <p class="text-xs text-emerald-600 font-semibold">Cạnh tranh cao</p>
                     </div>
                     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                        <span class="text-[10px] font-extrabold text-blue-700 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded">Lịch Xem Vườn</span>
+                        <span
+                            class="text-[10px] font-extrabold text-blue-700 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded">Lịch
+                            Xem Vườn</span>
                         <h3 class="text-xl font-bold text-slate-900 mt-2">22/10/2026</h3>
                         <p class="text-xs text-slate-500">Thương gia VinaAgr</p>
                     </div>
                     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                        <span class="text-[10px] font-extrabold text-purple-700 uppercase tracking-wider bg-purple-50 px-2 py-0.5 rounded">Ước Tính Thu Về</span>
+                        <span
+                            class="text-[10px] font-extrabold text-purple-700 uppercase tracking-wider bg-purple-50 px-2 py-0.5 rounded">Ước
+                            Tính Thu Về</span>
                         <h3 class="text-xl font-bold text-emerald-700 mt-2">680 Triệu</h3>
                         <p class="text-xs text-slate-500">Theo giá 85.000đ/kg</p>
                     </div>
@@ -165,17 +206,21 @@
                     <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-5">
                         <div class="border-b border-slate-200 pb-3">
                             <h3 class="text-lg font-extrabold text-slate-900 flex items-center gap-2">
-                                <i class="fa-solid fa-scale-balanced text-emerald-600"></i> Bảng So Sánh Giá Mua Thương Gia Đề Nghị
+                                <i class="fa-solid fa-scale-balanced text-emerald-600"></i> Bảng So Sánh Giá Mua Thương
+                                Gia Đề Nghị
                             </h3>
-                            <p class="text-xs text-slate-500 mt-0.5">Tự động xếp từ **Giá Cao Nhất** xuống Thấp. Chú bấm nút "CHỌN BÁN BÊN NÀY" để chốt đơn.</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Tự động xếp từ **Giá Cao Nhất** xuống Thấp. Chú bấm
+                                nút "CHỌN BÁN BÊN NÀY" để chốt đơn.</p>
                         </div>
 
                         <div class="space-y-4">
                             <template x-for="(offer, idx) in currentCropOffers" :key="offer.id">
-                                <div :class="idx === 0 ? 'bg-amber-50/80 border-2 border-amber-400 shadow-md' : 'bg-slate-50 border border-slate-200'" class="p-5 rounded-2xl transition-all relative">
-                                    
+                                <div :class="idx === 0 ? 'bg-amber-50/80 border-2 border-amber-400 shadow-md' : 'bg-slate-50 border border-slate-200'"
+                                    class="p-5 rounded-2xl transition-all relative">
+
                                     <template x-if="idx === 0">
-                                        <div class="absolute -top-3 left-4 bg-amber-500 text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow flex items-center gap-1">
+                                        <div
+                                            class="absolute -top-3 left-4 bg-amber-500 text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow flex items-center gap-1">
                                             <i class="fa-solid fa-crown text-yellow-200"></i> GIÁ CAO NHẤT CHO NHÀ VƯỜN
                                         </div>
                                     </template>
@@ -183,29 +228,44 @@
                                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mt-1">
                                         <div class="space-y-1">
                                             <div class="flex items-center space-x-2">
-                                                <h4 class="font-bold text-slate-900 text-base" x-text="offer.buyerName"></h4>
-                                                <span class="text-amber-500 text-xs font-bold" x-text="'⭐ ' + offer.rating"></span>
+                                                <h4 class="font-bold text-slate-900 text-base" x-text="offer.buyerName">
+                                                </h4>
+                                                <span class="text-amber-500 text-xs font-bold"
+                                                    x-text="'⭐ ' + offer.rating"></span>
                                             </div>
-                                            <p class="text-xs text-slate-500" x-text="offer.companyType + ' • (' + offer.reviewsCount + ' đơn uy tín)'"></p>
-                                            
+                                            <p class="text-xs text-slate-500"
+                                                x-text="offer.companyType + ' • (' + offer.reviewsCount + ' đơn uy tín)'">
+                                            </p>
+
                                             <div class="pt-2 text-xs space-y-1 text-slate-700">
-                                                <p><i class="fa-solid fa-shield-heart text-emerald-600 w-4"></i> <strong>Đặt Cọc:</strong> <span x-text="offer.depositTerms"></span></p>
-                                                <p><i class="fa-solid fa-truck text-blue-600 w-4"></i> <strong>Vận Chuyển:</strong> <span x-text="offer.logistics"></span></p>
+                                                <p><i class="fa-solid fa-shield-heart text-emerald-600 w-4"></i>
+                                                    <strong>Đặt Cọc:</strong> <span x-text="offer.depositTerms"></span>
+                                                </p>
+                                                <p><i class="fa-solid fa-truck text-blue-600 w-4"></i> <strong>Vận
+                                                        Chuyển:</strong> <span x-text="offer.logistics"></span></p>
                                             </div>
                                         </div>
 
-                                        <div class="text-right border-t md:border-t-0 pt-3 md:pt-0 border-slate-200 shrink-0">
-                                            <span class="text-xs font-bold text-slate-500 block uppercase">Giá Đề Nghị</span>
-                                            <span class="text-2xl font-black" :class="idx === 0 ? 'text-emerald-700' : 'text-slate-900'" x-text="offer.priceFormatted"></span>
-                                            
+                                        <div
+                                            class="text-right border-t md:border-t-0 pt-3 md:pt-0 border-slate-200 shrink-0">
+                                            <span class="text-xs font-bold text-slate-500 block uppercase">Giá Đề
+                                                Nghị</span>
+                                            <span class="text-2xl font-black"
+                                                :class="idx === 0 ? 'text-emerald-700' : 'text-slate-900'"
+                                                x-text="offer.priceFormatted"></span>
+
                                             <div class="mt-3">
                                                 <template x-if="offer.status === 'accepted'">
-                                                    <span class="bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-extrabold block shadow-sm">
-                                                        <i class="fa-solid fa-circle-check mr-1"></i> Chú Đã Chọn Bên Này
+                                                    <span
+                                                        class="bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-extrabold block shadow-sm">
+                                                        <i class="fa-solid fa-circle-check mr-1"></i> Chú Đã Chọn Bên
+                                                        Này
                                                     </span>
                                                 </template>
                                                 <template x-if="offer.status !== 'accepted'">
-                                                    <button @click="acceptOfferForFarmer(offer)" :class="idx === 0 ? 'bg-emerald-600 hover:bg-emerald-700 text-white' : 'bg-slate-200 hover:bg-slate-300 text-slate-800'" class="px-4 py-2 rounded-xl text-xs font-bold shadow-sm transition-all">
+                                                    <button @click="acceptOfferForFarmer(offer)"
+                                                        :class="idx === 0 ? 'bg-emerald-600 hover:bg-emerald-700 text-white' : 'bg-slate-200 hover:bg-slate-300 text-slate-800'"
+                                                        class="px-4 py-2 rounded-xl text-xs font-bold shadow-sm transition-all">
                                                         Chọn Bán Bên Này
                                                     </button>
                                                 </template>
@@ -225,45 +285,58 @@
 
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs">
                             <h4 class="font-extrabold text-brand-800 text-sm" x-text="selectedCrop.title"></h4>
-                            <p class="text-slate-600"><strong>Sản lượng:</strong> <span x-text="selectedCrop.quantity"></span></p>
-                            <p class="text-slate-600"><strong>Tiêu chuẩn:</strong> <span class="bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded" x-text="selectedCrop.standard"></span></p>
-                            <p class="text-slate-600"><strong>Địa chỉ vườn:</strong> <span x-text="selectedCrop.location"></span></p>
-                            <p class="text-amber-700 font-bold"><strong>Ngày cắt dự kiến:</strong> 25/10/2026 (Còn 5 ngày)</p>
+                            <p class="text-slate-600"><strong>Sản lượng:</strong> <span
+                                    x-text="selectedCrop.quantity"></span></p>
+                            <p class="text-slate-600"><strong>Tiêu chuẩn:</strong> <span
+                                    class="bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded"
+                                    x-text="selectedCrop.standard"></span></p>
+                            <p class="text-slate-600"><strong>Địa chỉ vườn:</strong> <span
+                                    x-text="selectedCrop.location"></span></p>
+                            <p class="text-amber-700 font-bold"><strong>Ngày cắt dự kiến:</strong> 25/10/2026 (Còn 5
+                                ngày)</p>
                         </div>
 
                         <div>
-                            <h4 class="text-xs font-extrabold text-slate-800 mb-3">📌 Tiến Trình Giao Dịch Tận Vườn:</h4>
+                            <h4 class="text-xs font-extrabold text-slate-800 mb-3">📌 Tiến Trình Giao Dịch Tận Vườn:
+                            </h4>
                             <div class="space-y-3 text-xs">
                                 <div class="flex items-center gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">1</span>
+                                    <span
+                                        class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">1</span>
                                     <div>
                                         <p class="font-bold text-slate-800">Đã đăng lô hàng</p>
                                         <p class="text-[10px] text-slate-500">20/10/2026 - Đã duyệt</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">2</span>
+                                    <span
+                                        class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">2</span>
                                     <div>
                                         <p class="font-bold text-slate-800">Thương gia chào giá</p>
                                         <p class="text-[10px] text-slate-500">3 đề nghị cạnh tranh</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">3</span>
+                                    <span
+                                        class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">3</span>
                                     <div>
                                         <p class="font-bold text-slate-800">Chú chọn thương gia</p>
-                                        <p class="text-[10px] text-emerald-600 font-semibold" x-text="selectedCrop.status === 'matched' ? 'Đã chọn VinaAgr' : 'Đang đợi chú chọn'"></p>
+                                        <p class="text-[10px] text-emerald-600 font-semibold"
+                                            x-text="selectedCrop.status === 'matched' ? 'Đã chọn VinaAgr' : 'Đang đợi chú chọn'">
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3 opacity-60">
-                                    <span class="w-6 h-6 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-[10px]">4</span>
+                                    <span
+                                        class="w-6 h-6 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-[10px]">4</span>
                                     <div>
                                         <p class="font-bold text-slate-800">Thương gia xem vườn</p>
                                         <p class="text-[10px] text-slate-500">Hẹn ngày 22/10/2026</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3 opacity-60">
-                                    <span class="w-6 h-6 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-[10px]">5</span>
+                                    <span
+                                        class="w-6 h-6 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-[10px]">5</span>
                                     <div>
                                         <p class="font-bold text-slate-800">Nhận cọc & Cắt bán</p>
                                         <p class="text-[10px] text-slate-500">Hoàn tất hợp đồng</p>
@@ -280,31 +353,43 @@
             <!-- PAGE 2: BUYER MARKETPLACE (SÀN DÀNH CHO THƯƠNG GIA THU MUA) -->
             <!-- ========================================================================= -->
             <div x-show="activePage === 'buyer'" class="space-y-6" x-cloak>
-                
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+
+                <div
+                    class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
-                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-semibold text-blue-700">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-semibold text-blue-700">
                             <i class="fa-solid fa-store"></i> Dành cho Thương Lái, Vựa Nông Sản & Doanh Nghiệp Xuất Khẩu
                         </div>
-                        <h2 class="text-xl font-extrabold text-slate-900 mt-2">Sàn Nông Sản Đang Tìm Đơn Vị Thu Mua Tận Vườn</h2>
-                        <p class="text-xs text-slate-500">Xem danh sách nông sản sắp thu hoạch, gửi báo giá mua trực tiếp cho nông dân.</p>
+                        <h2 class="text-xl font-extrabold text-slate-900 mt-2">Sàn Nông Sản Đang Tìm Đơn Vị Thu Mua Tận
+                            Vườn</h2>
+                        <p class="text-xs text-slate-500">Xem danh sách nông sản sắp thu hoạch, gửi báo giá mua trực
+                            tiếp cho nông dân.</p>
                     </div>
 
                     <div class="flex items-center space-x-2">
-                        <input type="text" placeholder="Tìm loại trái cây, khu vực..." class="text-xs border border-slate-300 rounded-xl px-3 py-2.5 w-60 outline-none focus:ring-2 focus:ring-blue-500">
-                        <button class="bg-blue-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm hover:bg-blue-700 transition-all">Lọc Tìm</button>
+                        <input type="text" placeholder="Tìm loại trái cây, khu vực..."
+                            class="text-xs border border-slate-300 rounded-xl px-3 py-2.5 w-60 outline-none focus:ring-2 focus:ring-blue-500">
+                        <button
+                            class="bg-blue-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm hover:bg-blue-700 transition-all">Lọc
+                            Tìm</button>
                     </div>
                 </div>
 
                 <!-- Crop Cards Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <template x-for="crop in cropListings" :key="crop.id">
-                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-blue-500 transition-all">
+                        <div
+                            class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-blue-500 transition-all">
                             <div>
                                 <div class="relative h-44">
                                     <img :src="crop.imageUrl" class="w-full h-full object-cover">
-                                    <span class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow" x-text="crop.standard"></span>
-                                    <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-lg" x-text="crop.location"></span>
+                                    <span
+                                        class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow"
+                                        x-text="crop.standard"></span>
+                                    <span
+                                        class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-lg"
+                                        x-text="crop.location"></span>
                                 </div>
 
                                 <div class="p-5 space-y-3">
@@ -313,7 +398,8 @@
                                         <p class="text-xs text-slate-500" x-text="'Chủ vườn: ' + crop.farmerName"></p>
                                     </div>
 
-                                    <div class="grid grid-cols-2 gap-2 text-xs bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                    <div
+                                        class="grid grid-cols-2 gap-2 text-xs bg-slate-50 p-3 rounded-xl border border-slate-100">
                                         <div>
                                             <span class="text-slate-400 block text-[10px]">SẢN LƯỢNG</span>
                                             <span class="font-bold text-slate-800" x-text="crop.quantity"></span>
@@ -327,7 +413,8 @@
                             </div>
 
                             <div class="p-5 pt-0">
-                                <button @click="openBuyerBidModal(crop)" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm transition-all flex items-center justify-center gap-1.5">
+                                <button @click="openBuyerBidModal(crop)"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm transition-all flex items-center justify-center gap-1.5">
                                     <i class="fa-solid fa-gavel"></i>
                                     <span>Gửi Báo Giá Thu Mua</span>
                                 </button>
@@ -341,37 +428,48 @@
             <!-- PAGE 3: FIELD INSPECTION (KHẢO SÁT CHẤT LƯỢNG VƯỜN & CHỐT CỌC) -->
             <!-- ========================================================================= -->
             <div x-show="activePage === 'inspection'" class="space-y-6" x-cloak>
-                
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+
+                <div
+                    class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
-                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-purple-50 border border-purple-200 rounded-full text-xs font-semibold text-purple-700">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-purple-50 border border-purple-200 rounded-full text-xs font-semibold text-purple-700">
                             <i class="fa-solid fa-clipboard-check"></i> Quy Trình Khảo Sát Chất Lượng Thực Địa
                         </div>
-                        <h2 class="text-xl font-extrabold text-slate-900 mt-2">Danh Sách Lịch Hẹn Khảo Sát Vườn & Thẩm Định Trái</h2>
-                        <p class="text-xs text-slate-500">Đơn vị thu mua cử nhân viên xuống tận vườn thẩm định độ chín, kích thước và chuyển cọc.</p>
+                        <h2 class="text-xl font-extrabold text-slate-900 mt-2">Danh Sách Lịch Hẹn Khảo Sát Vườn & Thẩm
+                            Định Trái</h2>
+                        <p class="text-xs text-slate-500">Đơn vị thu mua cử nhân viên xuống tận vườn thẩm định độ chín,
+                            kích thước và chuyển cọc.</p>
                     </div>
                 </div>
 
                 <div class="space-y-5">
                     <template x-for="inspection in inspectionsList" :key="inspection.id">
-                        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:border-emerald-500 transition-all space-y-4">
-                            
-                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                        <div
+                            class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:border-emerald-500 transition-all space-y-4">
+
+                            <div
+                                class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
                                 <div class="flex items-center space-x-3">
-                                    <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xl">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-xl">
                                         <i class="fa-solid fa-tree"></i>
                                     </div>
                                     <div>
-                                        <h3 class="font-extrabold text-slate-900 text-lg" x-text="inspection.cropTitle + ' - Nhà Vườn ' + inspection.farmerName"></h3>
-                                        <p class="text-xs text-slate-500" x-text="'Thương gia chốt mua: ' + inspection.buyerName"></p>
+                                        <h3 class="font-extrabold text-slate-900 text-lg"
+                                            x-text="inspection.cropTitle + ' - Nhà Vườn ' + inspection.farmerName"></h3>
+                                        <p class="text-xs text-slate-500"
+                                            x-text="'Thương gia chốt mua: ' + inspection.buyerName"></p>
                                     </div>
                                 </div>
 
                                 <div class="flex items-center space-x-2">
-                                    <a :href="'tel:' + inspection.farmerPhone" class="px-3.5 py-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
+                                    <a :href="'tel:' + inspection.farmerPhone"
+                                        class="px-3.5 py-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
                                         <i class="fa-solid fa-phone"></i> Gọi Nông Dân
                                     </a>
-                                    <a :href="'tel:' + inspection.buyerPhone" class="px-3.5 py-2 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
+                                    <a :href="'tel:' + inspection.buyerPhone"
+                                        class="px-3.5 py-2 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
                                         <i class="fa-solid fa-phone"></i> Gọi Thương Gia
                                     </a>
                                 </div>
@@ -381,33 +479,48 @@
                             <div>
                                 <p class="text-xs font-bold text-slate-700 mb-2">Trạng thái khảo sát thực địa:</p>
                                 <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center text-xs">
-                                    <div :class="inspection.step >= 1 ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-400'" class="p-2.5 rounded-xl">
+                                    <div :class="inspection.step >= 1 ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
+                                        class="p-2.5 rounded-xl">
                                         1. Đã Kết Nối SĐT
                                     </div>
-                                    <div :class="inspection.step >= 2 ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-400'" class="p-2.5 rounded-xl">
+                                    <div :class="inspection.step >= 2 ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
+                                        class="p-2.5 rounded-xl">
                                         2. Đã Đến Tận Vườn
                                     </div>
-                                    <div :class="inspection.step >= 3 ? 'bg-amber-500 text-white font-bold' : 'bg-slate-100 text-slate-400'" class="p-2.5 rounded-xl">
+                                    <div :class="inspection.step >= 3 ? 'bg-amber-500 text-white font-bold' : 'bg-slate-100 text-slate-400'"
+                                        class="p-2.5 rounded-xl">
                                         3. Thẩm Định Đạt Chuẩn
                                     </div>
-                                    <div :class="inspection.step >= 4 ? 'bg-purple-600 text-white font-bold' : 'bg-slate-100 text-slate-400'" class="p-2.5 rounded-xl">
+                                    <div :class="inspection.step >= 4 ? 'bg-purple-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
+                                        class="p-2.5 rounded-xl">
                                         4. Đã Đặt Cọc & Chốt
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Quality Check Result -->
-                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                            <div
+                                class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                                 <div class="space-y-1">
                                     <p class="text-xs font-bold text-slate-800">Biên Bản Thẩm Định Tại Vườn:</p>
                                     <div class="flex flex-wrap gap-2 text-xs">
-                                        <span class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> Trọng lượng: 2.2kg - 3.5kg/trái</span>
-                                        <span class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> Múi vàng cơm dẻo, độ đường > 28°</span>
-                                        <span class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> Tỷ lệ hao hụt dự kiến < 2%</span>
+                                        <span
+                                            class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i
+                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> Trọng lượng: 2.2kg
+                                            - 3.5kg/trái</span>
+                                        <span
+                                            class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i
+                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> Múi vàng cơm dẻo,
+                                            độ đường > 28°</span>
+                                        <span
+                                            class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i
+                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> Tỷ lệ hao hụt dự
+                                            kiến < 2%</span>
                                     </div>
                                 </div>
 
-                                <button @click="advanceInspectionStep(inspection)" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-sm shrink-0">
+                                <button @click="advanceInspectionStep(inspection)"
+                                    class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-sm shrink-0">
                                     Xác Nhận Đạt Chuẩn & Chuyển Cọc
                                 </button>
                             </div>
@@ -421,24 +534,29 @@
             <!-- PAGE 4: ADMIN PORTAL (PORTAL QUẢN TRỊ ADMIN) -->
             <!-- ========================================================================= -->
             <div x-show="activePage === 'admin'" class="space-y-6" x-cloak>
-                
-                <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+
+                <div
+                    class="bg-slate-900 text-white p-6 rounded-2xl shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                     <div>
-                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-xs font-semibold text-emerald-300">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-xs font-semibold text-emerald-300">
                             <i class="fa-solid fa-shield-halved"></i> Cổng Giám Sát Quản Trị Hệ Thống AgriConnect
                         </div>
                         <h2 class="text-2xl font-black mt-2">Bảng Điều Khiển Admin Tổng Thể</h2>
-                        <p class="text-xs text-slate-400">Kiểm duyệt lô hàng từ nông dân, giám sát ma trận giá đấu giá thương gia.</p>
+                        <p class="text-xs text-slate-400">Kiểm duyệt lô hàng từ nông dân, giám sát ma trận giá đấu giá
+                            thương gia.</p>
                     </div>
 
-                    <button @click="showAddModal = true" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-2.5 rounded-xl text-xs shadow-sm">
+                    <button @click="showAddModal = true"
+                        class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-2.5 rounded-xl text-xs shadow-sm">
                         + Tạo Lô Hàng Hỗ Trợ Nông Dân
                     </button>
                 </div>
 
                 <!-- Admin Analytics Chart -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h3 class="font-extrabold text-slate-800 text-base mb-4">📈 Biến Động Giá Thu Mua Trung Bình Theo Ngày (VNĐ/kg)</h3>
+                    <h3 class="font-extrabold text-slate-800 text-base mb-4">📈 Biến Động Giá Thu Mua Trung Bình Theo
+                        Ngày (VNĐ/kg)</h3>
                     <div class="h-64">
                         <canvas id="adminChart"></canvas>
                     </div>
@@ -466,14 +584,17 @@
                                 <template x-for="crop in cropListings" :key="crop.id">
                                     <tr class="hover:bg-slate-50">
                                         <td class="p-4 font-bold text-slate-900" x-text="crop.title"></td>
-                                        <td class="p-4 text-slate-700" x-text="crop.farmerName + ' (' + crop.farmerPhone + ')'"></td>
+                                        <td class="p-4 text-slate-700"
+                                            x-text="crop.farmerName + ' (' + crop.farmerPhone + ')'"></td>
                                         <td class="p-4 font-bold text-slate-800" x-text="crop.quantity"></td>
                                         <td class="p-4 text-slate-600" x-text="crop.location"></td>
                                         <td class="p-4">
-                                            <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-bold" x-text="crop.statusText"></span>
+                                            <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-bold"
+                                                x-text="crop.statusText"></span>
                                         </td>
                                         <td class="p-4 text-center">
-                                            <button @click="activePage = 'farmer'; selectedCropId = crop.id" class="bg-brand-700 text-white px-3 py-1.5 rounded-lg font-bold">
+                                            <button @click="activePage = 'farmer'; selectedCropId = crop.id"
+                                                class="bg-brand-700 text-white px-3 py-1.5 rounded-lg font-bold">
                                                 Xem Bảng Giá
                                             </button>
                                         </td>
@@ -489,43 +610,57 @@
         </main>
 
         <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-auto">
-            <p><strong>AgriConnect Platform © 2026</strong> — Nền Tảng Trực Tuyến Kết Nối Người Sản Xuất & Đơn Vị Thu Mua Nông Sản Việt Nam</p>
+            <p><strong>AgriConnect Platform © 2026</strong> — Nền Tảng Trực Tuyến Kết Nối Người Sản Xuất & Đơn Vị Thu
+                Mua Nông Sản Việt Nam</p>
         </footer>
 
     </div>
 
     <!-- MODAL 1: DÀNH CHO NÔNG DÂN ĐĂNG HÀNG -->
-    <div x-show="showAddModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" x-cloak>
+    <!-- MODAL 1: DÀNH CHO NÔNG DÂN ĐĂNG HÀNG (ĐÃ SỬA LỖI VỠ GIAO DIỆN) -->
+    <div x-show="showAddModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" x-cloak>
         <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 space-y-4">
+
+            <!-- Header Modal -->
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
                 <h3 class="font-extrabold text-slate-900 text-base">Đăng Bài Rao Bán Lô Nông Sản</h3>
-                <button @click="showAddModal = false" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+                <button @click="showAddModal = false" class="text-slate-400 hover:text-slate-600"><i
+                        class="fa-solid fa-xmark text-lg"></i></button>
             </div>
 
-            <form @submit.prevent="addNewCropListing()"
+            <!-- Form Nhập Liệu (Xếp dọc chuẩn dạng Cột) -->
+            <form @submit.prevent="addNewCropListing()" class="space-y-3 text-xs">
+                <div>
                     <label class="block font-bold text-slate-700 mb-1">Tên Nông Sản & Giống Trái</label>
-                    <input type="text" x-model="newForm.title" placeholder="Ví dụ: Sầu Riêng Ri6 Hữu Cơ" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none focus:ring-2 focus:ring-emerald-500" required>
+                    <input type="text" x-model="newForm.title" placeholder="Ví dụ: Sầu Riêng Ri6 Hữu Cơ"
+                        class="w-full border border-slate-300 rounded-xl p-2.5 outline-none focus:ring-2 focus:ring-emerald-500"
+                        required>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block font-bold text-slate-700 mb-1">Họ Tên Chủ Vườn</label>
-                        <input type="text" x-model="newForm.farmerName" placeholder="Chú Hai Xoàn" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
+                        <input type="text" x-model="newForm.farmerName" placeholder="Chú Hai Xoàn"
+                            class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                     </div>
                     <div>
                         <label class="block font-bold text-slate-700 mb-1">Số Điện Thoại</label>
-                        <input type="text" x-model="newForm.farmerPhone" placeholder="0913.xxx.xxx" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
+                        <input type="text" x-model="newForm.farmerPhone" placeholder="0913.xxx.xxx"
+                            class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block font-bold text-slate-700 mb-1">Sản Lượng Dự Kiến</label>
-                        <input type="text" x-model="newForm.quantity" placeholder="Ví dụ: 8 Tấn" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
+                        <input type="text" x-model="newForm.quantity" placeholder="Ví dụ: 8 Tấn"
+                            class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                     </div>
                     <div>
                         <label class="block font-bold text-slate-700 mb-1">Tiêu Chuẩn Nông Nghiệp</label>
-                        <select x-model="newForm.standard" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none">
+                        <select x-model="newForm.standard"
+                            class="w-full border border-slate-300 rounded-xl p-2.5 outline-none">
                             <option>VietGAP</option>
                             <option>GlobalGAP</option>
                             <option>Hữu Cơ (Organic)</option>
@@ -535,54 +670,72 @@
 
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">Địa Chỉ Vườn Thu Hoạch</label>
-                    <input type="text" x-model="newForm.location" placeholder="Huyện Cái Bè, Tiền Giang" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
+                    <input type="text" x-model="newForm.location" placeholder="Huyện Cái Bè, Tiền Giang"
+                        class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">Giá Khởi Điểm Mong Muốn (VNĐ/kg)</label>
-                    <input type="text" x-model="newForm.askingPrice" placeholder="78.000đ/kg" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
+                    <input type="text" x-model="newForm.askingPrice" placeholder="78.000đ/kg"
+                        class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div class="pt-3 flex items-center justify-end space-x-2 border-t border-slate-200">
-                    <button type="button" @click="showAddModal = false" class="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold">Hủy</button>
-                    <button type="submit" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold shadow-sm">Đăng Lên Sàn Đấu Giá</button>
+                    <button type="button" @click="showAddModal = false"
+                        class="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold">Hủy</button>
+                    <button type="submit"
+                        class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold shadow-sm">Đăng
+                        Lên Sàn Đấu Giá</button>
                 </div>
             </form>
+
         </div>
     </div>
 
     <!-- MODAL 2: DÀNH CHO THƯƠNG GIA GỬI BÁO GIÁ -->
-    <div x-show="showBidModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" x-cloak>
+    <div x-show="showBidModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" x-cloak>
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4">
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-                <h3 class="font-extrabold text-slate-900 text-base" x-text="'Gửi Báo Giá Thu Mua Lô: ' + selectedCropForBid.title"></h3>
-                <button @click="showBidModal = false" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+                <h3 class="font-extrabold text-slate-900 text-base"
+                    x-text="'Gửi Báo Giá Thu Mua Lô: ' + selectedCropForBid.title"></h3>
+                <button @click="showBidModal = false" class="text-slate-400 hover:text-slate-600"><i
+                        class="fa-solid fa-xmark text-lg"></i></button>
             </div>
 
             <form @submit.prevent="submitBuyerBid()" class="space-y-3 text-xs">
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">Tên Doanh Nghiệp / Thương Lái</label>
-                    <input type="text" x-model="bidForm.buyerName" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
+                    <input type="text" x-model="bidForm.buyerName"
+                        class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">Mức Giá Thu Mua Đề Nghị (VNĐ/kg)</label>
-                    <input type="text" x-model="bidForm.priceFormatted" placeholder="Ví dụ: 86.000đ / kg" class="w-full border border-slate-300 rounded-xl p-2.5 font-bold text-emerald-700 outline-none" required>
+                    <input type="text" x-model="bidForm.priceFormatted" placeholder="Ví dụ: 86.000đ / kg"
+                        class="w-full border border-slate-300 rounded-xl p-2.5 font-bold text-emerald-700 outline-none"
+                        required>
                 </div>
 
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">Điều Khoản Đặt Cọc</label>
-                    <input type="text" x-model="bidForm.depositTerms" placeholder="Ví dụ: Cọc 30% tận vườn sau khi kiểm hàng" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
+                    <input type="text" x-model="bidForm.depositTerms"
+                        placeholder="Ví dụ: Cọc 30% tận vườn sau khi kiểm hàng"
+                        class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">Hình Thức Vận Chuyển</label>
-                    <input type="text" x-model="bidForm.logistics" placeholder="Ví dụ: Cho xe cẩu tận vườn bốc xếp" class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
+                    <input type="text" x-model="bidForm.logistics" placeholder="Ví dụ: Cho xe cẩu tận vườn bốc xếp"
+                        class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div class="pt-3 flex items-center justify-end space-x-2 border-t border-slate-200">
-                    <button type="button" @click="showBidModal = false" class="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold">Hủy</button>
-                    <button type="submit" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-sm">Gửi Báo Giá Cho Nông Dân</button>
+                    <button type="button" @click="showBidModal = false"
+                        class="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold">Hủy</button>
+                    <button type="submit"
+                        class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-sm">Gửi
+                        Báo Giá Cho Nông Dân</button>
                 </div>
             </form>
         </div>
@@ -789,4 +942,5 @@
         });
     </script>
 </body>
+
 </html>
