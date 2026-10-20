@@ -155,9 +155,9 @@
                             cho Người sản xuất / Nông Dân
                         </div>
                         <h2 class="text-2xl font-black">Xin chào Chú Hai Xoàn! 👋</h2>
-                        <p class="text-xs text-emerald-100">Lô Sầu Riêng Ri6 tại Cái Bè đang có <strong
-                                class="text-amber-300 font-bold">3 thương gia chào giá mua</strong>. Mức giá cao nhất:
-                            <strong class="text-amber-300 font-black text-sm">85.000đ / kg</strong>.</p>
+                        <p class="text-xs text-emerald-100 transition-all duration-500 min-h-[20px]"
+                            x-html="dynamicTicker[tickerIndex]">
+                        </p>
                     </div>
 
                     <button @click="showAddModal = true"
@@ -750,6 +750,22 @@
                 showBidModal: false,
                 selectedCropId: 1,
                 selectedCropForBid: {},
+
+                // 1. THÔNG BÁO TỰ ĐỘNG CHẠY MỖI 5 GIÂY ON BANNER
+                tickerIndex: 0,
+                dynamicTicker: [
+                    'Lô Sầu Riêng Ri6 tại Cái Bè đang có <strong class="text-amber-300 font-bold">3 thương gia chào giá mua</strong>. Mức giá cao nhất: <strong class="text-amber-300 font-black text-sm">85.000đ / kg</strong>.',
+                    '⚡ VinaAgr Export vừa cập nhật: <strong class="text-amber-300 font-bold">Hỗ trợ 100% xe cẩu tận vườn</strong> bốc xếp cho chú.',
+                    '📈 Giá Sầu Riêng hôm nay tại Tiền Giang <strong class="text-amber-300 font-bold">tăng 3.000đ/kg</strong> so với ngày hôm qua!',
+                    '📋 Lịch hẹn: Nhân viên khảo sát sẽ tới kiểm định vườn Sầu Riêng vào <strong class="text-amber-300 font-bold">8:30 sáng ngày 22/10</strong>.'
+                ],
+
+                // KÍCH HOẠT ĐẾM GIỜ KHI MỞ APP
+                init() {
+                    setInterval(() => {
+                        this.tickerIndex = (this.tickerIndex + 1) % this.dynamicTicker.length;
+                    }, 5000);
+                },
 
                 newForm: {
                     title: '',
