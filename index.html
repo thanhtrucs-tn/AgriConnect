@@ -52,88 +52,105 @@
     <div class="min-h-screen flex flex-col">
 
         <!-- GLOBAL NAVBAR & PAGE SWITCHER -->
-        <header class="bg-brand-900 text-white sticky top-0 z-50 shadow-md">
+<!-- GLOBAL NAVBAR & PAGE SWITCHER (ĐÃ THIẾT KẾ LAI SANG TRỌNG & THÊM AVATAR) -->
+        <header class="bg-gradient-to-r from-emerald-950 via-brand-900 to-emerald-900 text-white sticky top-0 z-50 shadow-xl border-b border-emerald-800/40 backdrop-blur-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
-
-                    <!-- Logo -->
-                    <div class="flex items-center space-x-3">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-white text-xl font-black shadow-lg">
-                            <i class="fa-solid fa-wheat-awn"></i>
+                <div class="flex items-center justify-between h-16 gap-4">
+                    
+                    <!-- LOGO AGRICONNECT MỚI -->
+                    <div class="flex items-center space-x-3 shrink-0 cursor-pointer" @click="activePage = 'farmer'">
+                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-lg font-black shadow-md shadow-emerald-900/50 border border-emerald-300/30">
+                            <i class="fa-solid fa-wheat-awn-circle-exclamation text-amber-300"></i>
                         </div>
-                        <div>
-                            <span class="text-xl font-extrabold tracking-tight text-white">AgriConnect</span>
-                            <span
-                                class="hidden sm:inline-block text-[11px] text-emerald-300 ml-2 font-medium bg-brand-800 px-2 py-0.5 rounded-full border border-emerald-500/30">Nông
-                                Sản Tận Vườn</span>
+                        <div class="flex flex-col">
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-xl font-black tracking-tight text-white font-sans">Agri<span class="text-emerald-400">Connect</span></span>
+                                <span class="hidden xl:inline-block text-[10px] text-emerald-200 font-bold bg-emerald-800/80 px-2 py-0.5 rounded-full border border-emerald-500/30">v2.4 Demo</span>
+                            </div>
+                            <span class="text-[10px] text-emerald-300/80 font-medium tracking-wide">Sàn Nông Sản Tận Vườn</span>
                         </div>
                     </div>
 
-                    <!-- Thanh Chuyển Page (Chức năng Demo) -->
-                    <nav class="hidden md:flex space-x-1">
-                        <button @click="activePage = 'farmer'"
-                            :class="activePage === 'farmer' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'"
-                            class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
-                            <i class="fa-solid fa-tractor"></i>
+                    <!-- THANH MENU ĐIỀU HƯỚNG CÂN BẰNG GIỮA -->
+                    <nav class="hidden lg:flex items-center bg-emerald-950/60 p-1.5 rounded-2xl border border-emerald-800/50 shadow-inner space-x-1">
+                        <button @click="activePage = 'farmer'" 
+                                :class="activePage === 'farmer' ? 'bg-emerald-600 text-white font-bold shadow-md shadow-emerald-900/40' : 'text-emerald-200 hover:text-white hover:bg-emerald-800/50'" 
+                                class="px-4 py-2 rounded-xl text-xs transition-all duration-200 flex items-center gap-2">
+                            <i class="fa-solid fa-tractor text-sm"></i>
                             <span>1. Trang Nông Dân</span>
                         </button>
-                        <button @click="activePage = 'buyer'"
-                            :class="activePage === 'buyer' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'"
-                            class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
-                            <i class="fa-solid fa-store"></i>
+
+                        <button @click="activePage = 'buyer'" 
+                                :class="activePage === 'buyer' ? 'bg-emerald-600 text-white font-bold shadow-md shadow-emerald-900/40' : 'text-emerald-200 hover:text-white hover:bg-emerald-800/50'" 
+                                class="px-4 py-2 rounded-xl text-xs transition-all duration-200 flex items-center gap-2">
+                            <i class="fa-solid fa-store text-sm"></i>
                             <span>2. Sàn Thương Gia</span>
                         </button>
-                        <button @click="activePage = 'inspection'"
-                            :class="activePage === 'inspection' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'"
-                            class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
-                            <i class="fa-solid fa-clipboard-check"></i>
+
+                        <button @click="activePage = 'inspection'" 
+                                :class="activePage === 'inspection' ? 'bg-emerald-600 text-white font-bold shadow-md shadow-emerald-900/40' : 'text-emerald-200 hover:text-white hover:bg-emerald-800/50'" 
+                                class="px-4 py-2 rounded-xl text-xs transition-all duration-200 flex items-center gap-2">
+                            <i class="fa-solid fa-clipboard-check text-sm"></i>
                             <span>3. Khảo Sát Vườn</span>
                         </button>
-                        <button @click="activePage = 'admin'"
-                            :class="activePage === 'admin' ? 'bg-emerald-600 text-white font-bold' : 'text-emerald-100 hover:bg-brand-800'"
-                            class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center gap-1.5">
-                            <i class="fa-solid fa-user-shield"></i>
+
+                        <button @click="activePage = 'admin'" 
+                                :class="activePage === 'admin' ? 'bg-emerald-600 text-white font-bold shadow-md shadow-emerald-900/40' : 'text-emerald-200 hover:text-white hover:bg-emerald-800/50'" 
+                                class="px-4 py-2 rounded-xl text-xs transition-all duration-200 flex items-center gap-2">
+                            <i class="fa-solid fa-user-shield text-sm"></i>
                             <span>4. Portal Admin</span>
                         </button>
                     </nav>
 
-                    <!-- User Role Display -->
-                    <div class="flex items-center space-x-3">
+                    <!-- KHU VỰC TÀI KHOẢN & AVATAR ĐỘNG -->
+                    <div class="flex items-center space-x-3 shrink-0">
                         <div class="text-right hidden sm:block">
-                            <p class="text-xs font-bold text-white" x-text="
-                                activePage === 'farmer' ? '👨‍🌾 Chú Hai Xoàn (Nông Dân)' :
-                                activePage === 'buyer' ? '🏢 VinaAgr Export (Thương Gia)' :
-                                activePage === 'inspection' ? '🚚 NV Thẩm Định Thực Địa' : '🛡️ Quản Trị Viên Admin'
+                            <!-- Tên User -->
+                            <p class="text-xs font-bold text-white tracking-wide" x-text="
+                                activePage === 'farmer' ? 'Chú Hai Xoàn' :
+                                activePage === 'buyer' ? 'VinaAgr Export' :
+                                activePage === 'inspection' ? 'Nguyễn Văn Định' : 'Admin Hệ Thống'
                             "></p>
-                            <p class="text-[10px] text-emerald-300"
-                                x-text="'Role đang xem: ' + activePage.toUpperCase()"></p>
+                            <!-- Chức danh -->
+                            <div class="flex items-center justify-end gap-1 text-[10px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span class="text-emerald-300 font-medium" x-text="
+                                    activePage === 'farmer' ? 'Nông Dân (Cái Bè)' :
+                                    activePage === 'buyer' ? 'Thương Gia Thu Mua' :
+                                    activePage === 'inspection' ? 'NV Thẩm Định Vườn' : 'Quản Trị Viên'
+                                "></span>
+                            </div>
                         </div>
-                        <div
-                            class="w-9 h-9 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-sm shadow">
-                            <i :class="
-                                activePage === 'farmer' ? 'fa-solid fa-user-farmer' :
-                                activePage === 'buyer' ? 'fa-solid fa-briefcase' :
-                                activePage === 'inspection' ? 'fa-solid fa-truck' : 'fa-solid fa-shield-halved'
-                            "></i>
+
+                        <!-- AVATAR HÌNH ẢNH DÀNH CHO TỪNG ROLE -->
+                        <div class="relative group cursor-pointer">
+                            <img :src="
+                                activePage === 'farmer' ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150' :
+                                activePage === 'buyer' ? 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150' :
+                                activePage === 'inspection' ? 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150' : 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150'
+                            " 
+                            class="w-10 h-10 rounded-full object-cover border-2 border-emerald-400/80 shadow-md transition-transform group-hover:scale-105">
+                            
+                            <!-- Badge icon nhỏ đè góc avatar -->
+                            <span class="absolute -bottom-0.5 -right-0.5 bg-emerald-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center border border-emerald-950 font-bold">
+                                <i :class="
+                                    activePage === 'farmer' ? 'fa-solid fa-leaf' :
+                                    activePage === 'buyer' ? 'fa-solid fa-briefcase' :
+                                    activePage === 'inspection' ? 'fa-solid fa-truck' : 'fa-solid fa-shield'
+                                "></i>
+                            </span>
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            <!-- Mobile Nav -->
-            <div class="md:hidden flex bg-brand-800 text-center border-t border-brand-700 text-xs text-white">
-                <button @click="activePage = 'farmer'"
-                    :class="activePage === 'farmer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">👨‍🌾 Nông
-                    Dân</button>
-                <button @click="activePage = 'buyer'" :class="activePage === 'buyer' ? 'bg-emerald-600 font-bold' : ''"
-                    class="flex-1 py-2.5">🏢 Thương Gia</button>
-                <button @click="activePage = 'inspection'"
-                    :class="activePage === 'inspection' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">📋 Khảo
-                    Sát</button>
-                <button @click="activePage = 'admin'" :class="activePage === 'admin' ? 'bg-emerald-600 font-bold' : ''"
-                    class="flex-1 py-2.5">🛡️ Admin</button>
+            <!-- MOBILE NAV (HIỂN THỊ KHI TRÊN ĐIỆN THOẠI) -->
+            <div class="lg:hidden flex bg-emerald-950 text-center border-t border-emerald-800/60 text-xs text-white">
+                <button @click="activePage = 'farmer'" :class="activePage === 'farmer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">👨‍🌾 Nông Dân</button>
+                <button @click="activePage = 'buyer'" :class="activePage === 'buyer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">🏢 Thương Gia</button>
+                <button @click="activePage = 'inspection'" :class="activePage === 'inspection' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">📋 Khảo Sát</button>
+                <button @click="activePage = 'admin'" :class="activePage === 'admin' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">🛡️ Admin</button>
             </div>
         </header>
 
