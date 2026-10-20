@@ -61,9 +61,16 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16 gap-4">
                     
-                                                            <!-- LOGO AGRICONNECT (MASCOT) -->
-                    <div class="flex items-center shrink-0 cursor-pointer" @click="activePage = 'farmer'">
-                        <img src="assets/logo/agriConnect-mascot.svg" alt="AgriConnect - Sàn Nông Sản Tận Vườn" class="h-11">
+                                                                                <!-- LOGO AGRICONNECT (MASCOT) -->
+                    <div class="flex items-center space-x-2 shrink-0 cursor-pointer" @click="activePage = 'farmer'">
+                        <img src="assets/logo/agriConnect-mascot-icon.svg" alt="AgriConnect mascot" class="w-10 h-10">
+                        <div class="flex flex-col leading-tight">
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-lg font-black tracking-tight text-white font-sans">Agri<span class="text-emerald-400">Connect</span></span>
+                                <span class="hidden xl:inline-block text-[9px] text-emerald-200 font-bold bg-emerald-800/80 px-1.5 py-0.5 rounded-full border border-emerald-500/30">v2.4 Demo</span>
+                            </div>
+                            <span class="text-[9px] text-emerald-300/80 font-medium tracking-wide">Sàn Nông Sản Tận Vườn</span>
+                        </div>
                     </div>
 <!-- THANH MENU ÄIá»€U HÆ¯á»šNG MÆ¯á»¢T MÃ€ -->
                     <nav class="hidden lg:flex items-center bg-emerald-950/60 p-1.5 rounded-2xl border border-emerald-800/50 shadow-inner space-x-1">
@@ -965,4 +972,5 @@
 </body>
 
 </html>
+
 
