@@ -14,7 +14,7 @@ body {
 
 /* Tùy chỉnh hiệu ứng bo góc và đổ bóng */
 .custom-card {
-    background-color: #ffffff;
+    background-color: #9e9d9d;
     border-radius: 1rem;
     border: 1px solid #e2e8f0;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
