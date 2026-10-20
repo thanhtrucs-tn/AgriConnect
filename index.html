@@ -61,16 +61,51 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16 gap-4">
                     
-                                                                                <!-- LOGO AGRICONNECT (MASCOT) -->
-                    <div class="flex items-center space-x-2 shrink-0 cursor-pointer" @click="activePage = 'farmer'">
-                        <img src="assets/logo/agriConnect-mascot-icon.svg" alt="AgriConnect mascot" class="w-10 h-10">
-                        <div class="flex flex-col leading-tight">
-                            <div class="flex items-center gap-1.5">
-                                <span class="text-lg font-black tracking-tight text-white font-sans">Agri<span class="text-emerald-400">Connect</span></span>
-                                <span class="hidden xl:inline-block text-[9px] text-emerald-200 font-bold bg-emerald-800/80 px-1.5 py-0.5 rounded-full border border-emerald-500/30">v2.4 Demo</span>
-                            </div>
-                            <span class="text-[9px] text-emerald-300/80 font-medium tracking-wide">Sàn Nông Sản Tận Vườn</span>
-                        </div>
+                                                                                                    <!-- LOGO AGRICONNECT (MASCOT INLINE) -->
+                    <div class="flex items-center shrink-0 cursor-pointer" @click="activePage = 'farmer'">
+                        <svg height="44" width="150" class="block" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mascotLeaf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#86EFAC" />
+      <stop offset="40%" stop-color="#4ADE80" />
+      <stop offset="100%" stop-color="#16A34A" />
+    </linearGradient>
+    <filter id="cuteShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#14532D" flood-opacity="0.25" />
+    </filter>
+  </defs>
+  <g transform="translate(15, 20)">
+    <path d="M 70,130 C 68,150,72,165,78,175" fill="none" stroke="#22C55E" stroke-width="6" stroke-linecap="round" />
+    <ellipse cx="78" cy="178" rx="6" ry="3" fill="#15803D" opacity="0.25" />
+    <path d="M 70,40 C 120,20,155,40,150,90 C 145,135,110,155,65,145 C 25,135,10,95,20,60 C 25,48,45,42,70,40 Z" fill="url(#mascotLeaf)" filter="url(#cuteShadow)"/>
+    <path d="M 60,38 C 40,15,10,5,-5,20" fill="none" stroke="#4ADE80" stroke-width="5.5" stroke-linecap="round" />
+    <circle cx="-4" cy="20" r="4.5" fill="#86EFAC" />
+    <circle cx="-4" cy="20" r="2.2" fill="#BBF7D0" />
+    <ellipse cx="50" cy="65" rx="18" ry="14" fill="#BBF7D0" opacity="0.5" />
+    <ellipse cx="48" cy="62" rx="9" ry="7" fill="#FFFFFF" opacity="0.6" />
+    <path d="M 95,70 C 125,55,145,60,155,80" fill="none" stroke="#FDE68A" stroke-width="6" stroke-linecap="round" />
+    <path d="M 95,90 C 125,110,145,105,155,85" fill="none" stroke="#FDE68A" stroke-width="6" stroke-linecap="round" />
+    <path d="M 152,76 L 160,80 L 152,84 Z" fill="#FBBF24" />
+    <path d="M 152,82 L 160,85 L 152,88 Z" fill="#FBBF24" transform="rotate(180,156,85)" />
+    <ellipse cx="55" cy="80" rx="12" ry="14" fill="#FFFFFF" />
+    <ellipse cx="90" cy="78" rx="12" ry="14" fill="#FFFFFF" />
+    <circle cx="57" cy="83" r="6.5" fill="#1F2937" />
+    <circle cx="92" cy="81" r="6.5" fill="#1F2937" />
+    <circle cx="59" cy="81" r="2.5" fill="#FFFFFF" />
+    <circle cx="94" cy="79" r="2.5" fill="#FFFFFF" />
+    <ellipse cx="45" cy="95" rx="6" ry="3.5" fill="#FCA5A5" opacity="0.6" />
+    <ellipse cx="105" cy="93" rx="6" ry="3.5" fill="#FCA5A5" opacity="0.6" />
+    <path d="M 60,100 C 72,115,88,115,98,98" fill="none" stroke="#1F2937" stroke-width="5" stroke-linecap="round" />
+    <path d="M 78,108 C 82,115,90,112,88,108 Z" fill="#F9A8D4" opacity="0.9" />
+    <circle cx="140" cy="60" r="5" fill="#FDE68A" />
+    <circle cx="140" cy="60" r="2.5" fill="#FBBF24" />
+  </g>
+  <g transform="translate(190,80)">
+    <text font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="900" fill="#1F2937">Agri</text>
+    <text x="100" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="900" fill="#16A34A">Connect</text>
+    <text y="22" font-family="'Inter','Segoe UI',system-ui,sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.18em" fill="#6B7280">Sàn Nông Sản Tận Vườn</text>
+  </g>
+</svg>
                     </div>
 <!-- THANH MENU ÄIá»€U HÆ¯á»šNG MÆ¯á»¢T MÃ€ -->
                     <nav class="hidden lg:flex items-center bg-emerald-950/60 p-1.5 rounded-2xl border border-emerald-800/50 shadow-inner space-x-1">
@@ -972,5 +1007,6 @@
 </body>
 
 </html>
+
 
 
