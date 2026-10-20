@@ -151,7 +151,7 @@
                             <div class="flex items-center justify-end gap-1 text-[10px]">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                                 <span class="text-emerald-300 font-medium" x-text="
-                                    activePage === 'farmer' ? 'NÃ´ng DÃ¢n (CÃ¡i BÃ¨)' :
+                                    activePage === 'farmer' ? 'NÃ´ng DÃ¢n (Cái Bè)' :
                                     activePage === 'buyer' ? 'ThÆ°Æ¡ng Gia Thu Mua' :
                                     activePage === 'inspection' ? 'NV Tháº©m Äá»‹nh VÆ°á»n' : 'Quáº£n Trá»‹ ViÃªn'
                                 "></span>
@@ -305,7 +305,7 @@
                                                 <template x-if="offer.status === 'accepted'">
                                                     <span
                                                         class="bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-extrabold block shadow-sm">
-                                                        <i class="fa-solid fa-circle-check mr-1"></i> ChÃº ÄÃ£ Chá»n BÃªn
+                                                        <i class="fa-solid fa-circle-check mr-1"></i> ChÃº Đã Chá»n BÃªn
                                                         NÃ y
                                                     </span>
                                                 </template>
@@ -351,8 +351,8 @@
                                     <span
                                         class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">1</span>
                                     <div>
-                                        <p class="font-bold text-slate-800">ÄÃ£ Ä‘Äƒng lÃ´ hÃ ng</p>
-                                        <p class="text-[10px] text-slate-500">20/10/2026 - ÄÃ£ duyá»‡t</p>
+                                        <p class="font-bold text-slate-800">Đã đăng lÃ´ hÃ ng</p>
+                                        <p class="text-[10px] text-slate-500">20/10/2026 - Đã duyá»‡t</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3">
@@ -367,9 +367,9 @@
                                     <span
                                         class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">3</span>
                                     <div>
-                                        <p class="font-bold text-slate-800">ChÃº chá»n thÆ°Æ¡ng gia</p>
+                                        <p class="font-bold text-slate-800">ChÃº chá»n thương gia</p>
                                         <p class="text-[10px] text-emerald-600 font-semibold"
-                                            x-text="selectedCrop.status === 'matched' ? 'ÄÃ£ chá»n VinaAgr' : 'Äang Ä‘á»£i chÃº chá»n'">
+                                            x-text="selectedCrop.status === 'matched' ? 'Đã chá»n VinaAgr' : 'Äang Ä‘á»£i chÃº chá»n'">
                                         </p>
                                     </div>
                                 </div>
@@ -485,7 +485,7 @@
                         </div>
                         <h2 class="text-xl font-extrabold text-slate-900 mt-2">Danh SÃ¡ch Lá»‹ch Háº¹n Kháº£o SÃ¡t VÆ°á»n & Tháº©m
                             Äá»‹nh TrÃ¡i</h2>
-                        <p class="text-xs text-slate-500">ÄÆ¡n vá»‹ thu mua cá»­ nhÃ¢n viÃªn xuá»‘ng táº­n vÆ°á»n tháº©m Ä‘á»‹nh Ä‘á»™ chÃ­n,
+                        <p class="text-xs text-slate-500">ÄÆ¡n vá»‹ thu mua cá»­ nhÃ¢n viÃªn xuá»‘ng tận vườn tháº©m định Ä‘á»™ chÃ­n,
                             kÃ­ch thÆ°á»›c vÃ  chuyá»ƒn cá»c.</p>
                     </div>
                 </div>
@@ -528,11 +528,11 @@
                                 <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center text-xs">
                                     <div :class="inspection.step >= 1 ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
                                         class="p-2.5 rounded-xl">
-                                        1. ÄÃ£ Káº¿t Ná»‘i SÄT
+                                        1. Đã Káº¿t Ná»‘i SÄT
                                     </div>
                                     <div :class="inspection.step >= 2 ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
                                         class="p-2.5 rounded-xl">
-                                        2. ÄÃ£ Äáº¿n Táº­n VÆ°á»n
+                                        2. Đã Đến Táº­n VÆ°á»n
                                     </div>
                                     <div :class="inspection.step >= 3 ? 'bg-amber-500 text-white font-bold' : 'bg-slate-100 text-slate-400'"
                                         class="p-2.5 rounded-xl">
@@ -540,7 +540,7 @@
                                     </div>
                                     <div :class="inspection.step >= 4 ? 'bg-purple-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
                                         class="p-2.5 rounded-xl">
-                                        4. ÄÃ£ Äáº·t Cá»c & Chá»‘t
+                                        4. Đã Äáº·t Cá»c & Chá»‘t
                                     </div>
                                 </div>
                             </div>
@@ -591,7 +591,7 @@
                         </div>
                         <h2 class="text-2xl font-black mt-2">Báº£ng Äiá»u Khiá»ƒn Admin Tá»•ng Thá»ƒ</h2>
                         <p class="text-xs text-slate-400">Kiá»ƒm duyá»‡t lÃ´ hÃ ng tá»« nÃ´ng dÃ¢n, giÃ¡m sÃ¡t ma tráº­n giÃ¡ Ä‘áº¥u giÃ¡
-                            thÆ°Æ¡ng gia.</p>
+                            thương gia.</p>
                     </div>
 
                     <button @click="showAddModal = true"
@@ -717,7 +717,7 @@
 
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">Äá»‹a Chá»‰ VÆ°á»n Thu Hoáº¡ch</label>
-                    <input type="text" x-model="newForm.location" placeholder="Huyá»‡n CÃ¡i BÃ¨, Tiá»n Giang"
+                    <input type="text" x-model="newForm.location" placeholder="Huyá»‡n Cái Bè, Tiền Giang"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
@@ -767,13 +767,13 @@
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">Äiá»u Khoáº£n Äáº·t Cá»c</label>
                     <input type="text" x-model="bidForm.depositTerms"
-                        placeholder="VÃ­ dá»¥: Cá»c 30% táº­n vÆ°á»n sau khi kiá»ƒm hÃ ng"
+                        placeholder="VÃ­ dá»¥: Cá»c 30% tận vườn sau khi kiá»ƒm hÃ ng"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div>
                     <label class="block font-bold text-slate-700 mb-1">HÃ¬nh Thá»©c Váº­n Chuyá»ƒn</label>
-                    <input type="text" x-model="bidForm.logistics" placeholder="VÃ­ dá»¥: Cho xe cáº©u táº­n vÆ°á»n bá»‘c xáº¿p"
+                    <input type="text" x-model="bidForm.logistics" placeholder="VÃ­ dá»¥: Cho xe cẩu tận vườn bốc xếp"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
@@ -801,10 +801,10 @@
                 // 1. THÃ”NG BÃO Tá»° Äá»˜NG CHáº Y Má»–I 5 GIÃ‚Y ON BANNER
                 tickerIndex: 0,
                 dynamicTicker: [
-                    'LÃ´ Sáº§u RiÃªng Ri6 táº¡i CÃ¡i BÃ¨ Ä‘ang cÃ³ <strong class="text-amber-300 font-bold">3 thÆ°Æ¡ng gia chÃ o giÃ¡ mua</strong>. Má»©c giÃ¡ cao nháº¥t: <strong class="text-amber-300 font-black text-sm">85.000Ä‘ / kg</strong>.',
-                    'âš¡ VinaAgr Export vá»«a cáº­p nháº­t: <strong class="text-amber-300 font-bold">Há»— trá»£ 100% xe cáº©u táº­n vÆ°á»n</strong> bá»‘c xáº¿p cho chÃº.',
-                    'ðŸ“ˆ GiÃ¡ Sáº§u RiÃªng hÃ´m nay táº¡i Tiá»n Giang <strong class="text-amber-300 font-bold">tÄƒng 3.000Ä‘/kg</strong> so vá»›i ngÃ y hÃ´m qua!',
-                    'ðŸ“‹ Lá»‹ch háº¹n: NhÃ¢n viÃªn kháº£o sÃ¡t sáº½ tá»›i kiá»ƒm Ä‘á»‹nh vÆ°á»n Sáº§u RiÃªng vÃ o <strong class="text-amber-300 font-bold">8:30 sÃ¡ng ngÃ y 22/10</strong>.'
+                    'Lô Sầu Riêng Ri6 tại Cái Bè đang có <strong class="text-amber-300 font-bold">3 thương gia chÃ o giÃ¡ mua</strong>. Mức giá cao nhất: <strong class="text-amber-300 font-black text-sm">85.000Ä‘ / kg</strong>.',
+                    'âš¡ VinaAgr Export vừa cập nhật: <strong class="text-amber-300 font-bold">Hỗ trợ 100% xe cẩu tận vườn</strong> bốc xếp cho chú.',
+                    'ðŸ“ˆ Giá Sầu Riêng hôm nay tại Tiền Giang <strong class="text-amber-300 font-bold">tăng 3.000Ä‘/kg</strong> so vá»›i ngÃ y hÃ´m qua!',
+                    'ðŸ“‹ Lịch hẹn: Nhân viên khảo sát sẽ tới kiểm định vườn Sầu Riêng vÃ o <strong class="text-amber-300 font-bold">8:30 sÃ¡ng ngÃ y 22/10</strong>.'
                 ],
 
                 // KÃCH HOáº T Äáº¾M GIá»œ KHI Má»ž APP
@@ -827,8 +827,8 @@
                 bidForm: {
                     buyerName: 'VinaAgr Export Co.',
                     priceFormatted: '',
-                    depositTerms: 'Cá»c 30% táº­n vÆ°á»n',
-                    logistics: 'Tá»± mang xe cáº©u Ä‘áº¿n bá»‘c xáº¿p'
+                    depositTerms: 'Cá»c 30% tận vườn',
+                    logistics: 'Tá»± mang xe cẩu Ä‘áº¿n bốc xếp'
                 },
 
                 cropListings: [
@@ -840,7 +840,7 @@
                         farmerPhone: '0913.882.112',
                         quantity: '8 Táº¥n',
                         standard: 'VietGAP',
-                        location: 'CÃ¡i BÃ¨, Tiá»n Giang',
+                        location: 'Cái Bè, Tiền Giang',
                         askingPrice: '78.000Ä‘/kg',
                         status: 'bidding',
                         statusText: 'Äang Nháº­n BÃ¡o GiÃ¡',
@@ -857,7 +857,7 @@
                         location: 'Cao LÃ£nh, Äá»“ng ThÃ¡p',
                         askingPrice: '62.000Ä‘/kg',
                         status: 'matched',
-                        statusText: 'ÄÃ£ Chá»n GiÃ¡',
+                        statusText: 'Đã Chá»n GiÃ¡',
                         imageUrl: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80&w=400'
                     },
                     {
@@ -868,7 +868,7 @@
                         farmerPhone: '0273.3812.99',
                         quantity: '12 Táº¥n',
                         standard: 'VietGAP',
-                        location: 'Chá»£ Gáº¡o, Tiá»n Giang',
+                        location: 'Chá»£ Gáº¡o, Tiền Giang',
                         askingPrice: '32.000Ä‘/kg',
                         status: 'bidding',
                         statusText: 'Äang Nháº­n BÃ¡o GiÃ¡',
@@ -878,12 +878,12 @@
 
                 offersMatrix: {
                     1: [
-                        { id: 101, buyerName: 'CÃ´ng Ty NÃ´ng Sáº£n VinaAgr', companyType: 'Doanh Nghiá»‡p Xuáº¥t Kháº©u', rating: 4.9, reviewsCount: 128, priceFormatted: '85.000Ä‘ / kg', depositTerms: 'Cá»c 30% táº­n vÆ°á»n sau khi kiá»ƒm hÃ ng', logistics: 'Tá»± Ä‘iá»u xe cáº©u táº­n vÆ°á»n bá»‘c xáº¿p', status: 'pending' },
+                        { id: 101, buyerName: 'CÃ´ng Ty NÃ´ng Sáº£n VinaAgr', companyType: 'Doanh Nghiá»‡p Xuáº¥t Kháº©u', rating: 4.9, reviewsCount: 128, priceFormatted: '85.000Ä‘ / kg', depositTerms: 'Cá»c 30% tận vườn sau khi kiá»ƒm hÃ ng', logistics: 'Tá»± Ä‘iá»u xe cẩu tận vườn bốc xếp', status: 'pending' },
                         { id: 102, buyerName: 'ThÆ°Æ¡ng LÃ¡i HÃ¹ng Báº¿n Tre', companyType: 'ThÆ°Æ¡ng LÃ¡i Truyá»n Thá»‘ng', rating: 4.7, reviewsCount: 64, priceFormatted: '82.000Ä‘ / kg', depositTerms: 'Cá»c 20% ngay', logistics: 'NÃ´ng dÃ¢n há»— trá»£ váº­n chuyá»ƒn ra Ä‘Æ°á»ng lá»›n', status: 'pending' },
-                        { id: 103, buyerName: 'Há»£p TÃ¡c XÃ£ NÃ´ng Nghiá»‡p Xanh', companyType: 'HTX Thu Mua', rating: 4.5, reviewsCount: 32, priceFormatted: '78.000Ä‘ / kg', depositTerms: 'Thanh toÃ¡n 100% khi nháº­n hÃ ng', logistics: 'Giao táº¡i kho HTX', status: 'pending' }
+                        { id: 103, buyerName: 'Há»£p TÃ¡c XÃ£ NÃ´ng Nghiá»‡p Xanh', companyType: 'HTX Thu Mua', rating: 4.5, reviewsCount: 32, priceFormatted: '78.000Ä‘ / kg', depositTerms: 'Thanh toÃ¡n 100% khi nháº­n hÃ ng', logistics: 'Giao tại kho HTX', status: 'pending' }
                     ],
                     2: [
-                        { id: 201, buyerName: 'Chuá»—i SiÃªu Thá»‹ Co.opmart', companyType: 'Há»‡ Thá»‘ng SiÃªu Thá»‹', rating: 5.0, reviewsCount: 210, priceFormatted: '68.000Ä‘ / kg', depositTerms: 'Cá»c 40%', logistics: 'Giao táº¡i kho tá»•ng', status: 'accepted' }
+                        { id: 201, buyerName: 'Chuá»—i SiÃªu Thá»‹ Co.opmart', companyType: 'Há»‡ Thá»‘ng SiÃªu Thá»‹', rating: 5.0, reviewsCount: 210, priceFormatted: '68.000Ä‘ / kg', depositTerms: 'Cá»c 40%', logistics: 'Giao tại kho tá»•ng', status: 'accepted' }
                     ],
                     3: [
                         { id: 301, buyerName: 'Long ChÃ¢u Export', companyType: 'Xuáº¥t Kháº©u', rating: 4.8, reviewsCount: 89, priceFormatted: '35.000Ä‘ / kg', depositTerms: 'Cá»c 25%', logistics: 'Container láº¡nh Ä‘áº¿n vÆ°á»n', status: 'pending' }
@@ -921,7 +921,7 @@
                 advanceInspectionStep(inspection) {
                     if (inspection.step < 4) {
                         inspection.step += 1;
-                        alert('ÄÃ£ cáº­p nháº­t tiáº¿n trÃ¬nh kháº£o sÃ¡t vÆ°á»n thÃ nh cÃ´ng!');
+                        alert('Đã cáº­p nháº­t tiáº¿n trÃ¬nh kháº£o sÃ¡t vÆ°á»n thÃ nh cÃ´ng!');
                     } else {
                         alert('Giao dá»‹ch Ä‘Ã£ hoÃ n táº¥t thÃ nh cÃ´ng!');
                     }
@@ -949,7 +949,7 @@
                         status: 'pending'
                     });
                     this.showBidModal = false;
-                    alert('ÄÃ£ gá»­i bÃ¡o giÃ¡ thu mua tá»›i NÃ´ng DÃ¢n thÃ nh cÃ´ng!');
+                    alert('Đã gá»­i bÃ¡o giÃ¡ thu mua tá»›i NÃ´ng DÃ¢n thÃ nh cÃ´ng!');
                     this.activePage = 'farmer';
                     this.selectedCropId = cropId;
                 },
