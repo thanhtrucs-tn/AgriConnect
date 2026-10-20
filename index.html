@@ -58,17 +58,38 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16 gap-4">
                     
-                    <!-- LOGO MASCOT AGRICONNECT -->
-                    <div class="flex items-center space-x-3 shrink-0 cursor-pointer" @click="activePage = 'farmer'">
-                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-emerald-500 flex items-center justify-center text-emerald-950 text-xl font-black shadow-lg shadow-emerald-950/60 border border-amber-300/40">
-                            <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
-                        </div>
-                        <div class="flex flex-col">
+                    <!-- LOGO AGRICONNECT -->
+                    <div class="flex items-center space-x-2 shrink-0 cursor-pointer" @click="activePage = 'farmer'">
+                        <svg width="42" height="42" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-label="AgriConnect" role="img" class="shrink-0">
+                            <defs>
+                                <linearGradient id="leafNav" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#4ADE80"/>
+                                    <stop offset="100%" stop-color="#22C55E"/>
+                                </linearGradient>
+                                <linearGradient id="linkNav" x1="0" y1="0" x2="1" y2="0">
+                                    <stop offset="0%" stop-color="#FDE68A"/>
+                                    <stop offset="100%" stop-color="#FBBF24"/>
+                                </linearGradient>
+                            </defs>
+                            <g transform="translate(10,10)">
+                                <path d="M 70,10 C 110,5,135,25,130,60 C 125,95,95,125,60,120 C 25,115,5,85,10,50 C 12,30,35,12,70,10 Z" fill="url(#leafNav)"/>
+                                <path d="M 40,70 C 65,45,95,40,120,55" fill="none" stroke="#14532D" stroke-width="4" stroke-linecap="round" opacity="0.25"/>
+                                <g transform="translate(35,40) scale(0.95)">
+                                    <path d="M 20,25 A 20,20 0 0 1 50,10" fill="none" stroke="url(#linkNav)" stroke-width="6.5" stroke-linecap="round"/>
+                                    <path d="M 48,6 L 54,10 L 48,14 Z" fill="#FBBF24"/>
+                                    <path d="M 50,30 A 20,20 0 0 1 20,45" fill="none" stroke="url(#linkNav)" stroke-width="6.5" stroke-linecap="round"/>
+                                    <path d="M 22,41 L 16,45 L 22,49 Z" fill="#FBBF24"/>
+                                </g>
+                                <circle cx="115" cy="35" r="6.5" fill="#FDE68A"/>
+                                <circle cx="115" cy="35" r="3.5" fill="#FBBF24"/>
+                            </g>
+                        </svg>
+                        <div class="flex flex-col leading-tight">
                             <div class="flex items-center gap-1.5">
-                                <span class="text-xl font-black tracking-tight text-white font-sans">Agri<span class="text-emerald-400">Connect</span></span>
-                                <span class="hidden xl:inline-block text-[10px] text-emerald-200 font-bold bg-emerald-800/80 px-2 py-0.5 rounded-full border border-emerald-500/30">v2.4 Demo</span>
+                                <span class="text-lg font-black tracking-tight text-white">Agri<span class="text-emerald-400">Connect</span></span>
+                                <span class="hidden xl:inline-block text-[9px] text-emerald-200 font-bold bg-emerald-800/80 px-1.5 py-0.5 rounded-full border border-emerald-500/30">v2.4 Demo</span>
                             </div>
-                            <span class="text-[10px] text-emerald-300/80 font-medium tracking-wide">Sàn Nông Sản Tận Vườn</span>
+                            <span class="text-[9px] text-emerald-300/80 font-medium tracking-wide">Sàn Nông Sản Tận Vườn</span>
                         </div>
                     </div>
 

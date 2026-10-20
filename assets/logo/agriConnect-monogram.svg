@@ -1,0 +1,28 @@
+﻿<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leafMono" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22C55E" />
+      <stop offset="100%" stop-color="#16A34A" />
+    </linearGradient>
+    <linearGradient id="linkMono" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="softMono" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#14532D" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="256" fill="#FFFFFF" />
+  <g transform="translate(256, 230) scale(1.15)">
+    <path d="M -95,-120 C -25,-130,30,-95,20,-25 C 10,45,-40,90,-95,80 C -150,70,-185,20,-175,-40 C -170,-75,-135,-115,-95,-120 Z" fill="url(#leafMono)" filter="url(#softMono)" />
+    <path d="M -140,-20 C -95,-65,-40,-75,10,-40" fill="none" stroke="#DCFCE7" stroke-width="10" stroke-linecap="round" opacity="0.45" />
+    <g>
+      <path d="M -40,-15 A 26,26 0 0 1 15,-45" fill="none" stroke="url(#linkMono)" stroke-width="11" stroke-linecap="round" />
+      <path d="M 13,-49 L 22,-45 L 13,-41 Z" fill="#F59E0B" />
+      <path d="M 15,-5 A 26,26 0 0 1 -40,25" fill="none" stroke="url(#linkMono)" stroke-width="11" stroke-linecap="round" />
+      <path d="M -38,21 L -47,25 L -38,29 Z" fill="#F59E0B" />
+    </g>
+    <circle cx="30" cy="-80" r="10.5" fill="#FBBF24" />
+    <circle cx="30" cy="-80" r="6" fill="#F59E0B" />
+  </g>
+</svg>
