@@ -1,0 +1,21 @@
+/* Import phông chữ chuẩn Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Fix ẩn các thẻ chưa load xong của Alpine.js */
+[x-cloak] { 
+    display: none !important; 
+}
+
+/* Tùy chỉnh hiệu ứng bo góc và đổ bóng */
+.custom-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
