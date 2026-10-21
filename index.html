@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriConnect - Ná»n Táº£ng Káº¿t Ná»‘i & Thu Mua NÃ´ng Sáº£n Táº­n VÆ°á»n</title>
+    <title>AgriConnect - Nền Tảng Kết Nối & Thu Mua Nông Sản Tận Vườn</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome CDN (Icons) -->
@@ -51,12 +51,12 @@
 
 <body class="bg-slate-100 text-slate-800 antialiased" x-data="appData()">
 
-    <!-- WRAPPER CHÃNH -->
+    <!-- WRAPPER CHÍNH -->
     <div class="min-h-screen flex flex-col">
 
         <!-- GLOBAL NAVBAR & PAGE SWITCHER -->
-<!-- GLOBAL NAVBAR & PAGE SWITCHER (ÄÃƒ THIáº¾T Káº¾ LAI SANG TRá»ŒNG & THÃŠM AVATAR) -->
-       <!-- GLOBAL NAVBAR & PAGE SWITCHER (Sá»¬ Dá»¤NG MASCOT VECTOR ICONS Sáº®C NÃ‰T) -->
+<!-- GLOBAL NAVBAR & PAGE SWITCHER (ĐÃ THIẾT KẾ LAI SANG TRỌNG & THÊM AVATAR) -->
+       <!-- GLOBAL NAVBAR & PAGE SWITCHER (SỬ DỤNG MASCOT VECTOR ICONS SẮC NÉT) -->
         <header class="bg-gradient-to-r from-emerald-950 via-brand-900 to-emerald-900 text-white sticky top-0 z-50 shadow-xl border-b border-emerald-800/40 backdrop-blur-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16 gap-4">
@@ -107,27 +107,27 @@
   </g>
 </svg>
                     </div>
-<!-- THANH MENU ÄIá»€U HÆ¯á»šNG MÆ¯á»¢T MÃ€ -->
+<!-- THANH MENU ĐIỀU HƯỚNG MƯỢT MÀ -->
                     <nav class="hidden lg:flex items-center bg-emerald-950/60 p-1.5 rounded-2xl border border-emerald-800/50 shadow-inner space-x-1">
                         <button @click="activePage = 'farmer'" 
                                 :class="activePage === 'farmer' ? 'bg-emerald-600 text-white font-bold shadow-md shadow-emerald-900/40' : 'text-emerald-200 hover:text-white hover:bg-emerald-800/50'" 
                                 class="px-4 py-2 rounded-xl text-xs transition-all duration-200 flex items-center gap-2">
                             <i class="fa-solid fa-tractor text-sm"></i>
-                            <span>1. Trang NÃ´ng DÃ¢n</span>
+                            <span>1. Trang Nông Dân</span>
                         </button>
 
                         <button @click="activePage = 'buyer'" 
                                 :class="activePage === 'buyer' ? 'bg-emerald-600 text-white font-bold shadow-md shadow-emerald-900/40' : 'text-emerald-200 hover:text-white hover:bg-emerald-800/50'" 
                                 class="px-4 py-2 rounded-xl text-xs transition-all duration-200 flex items-center gap-2">
                             <i class="fa-solid fa-store text-sm"></i>
-                            <span>2. SÃ n ThÆ°Æ¡ng Gia</span>
+                            <span>2. Sàn Thương Gia</span>
                         </button>
 
                         <button @click="activePage = 'inspection'" 
                                 :class="activePage === 'inspection' ? 'bg-emerald-600 text-white font-bold shadow-md shadow-emerald-900/40' : 'text-emerald-200 hover:text-white hover:bg-emerald-800/50'" 
                                 class="px-4 py-2 rounded-xl text-xs transition-all duration-200 flex items-center gap-2">
                             <i class="fa-solid fa-clipboard-check text-sm"></i>
-                            <span>3. Kháº£o SÃ¡t VÆ°á»n</span>
+                            <span>3. Khảo Sát Vườn</span>
                         </button>
 
                         <button @click="activePage = 'admin'" 
@@ -138,27 +138,27 @@
                         </button>
                     </nav>
 
-                    <!-- KHU Vá»°C TÃ€I KHOáº¢N & MASCOT BADGE CÃ”NG NGHá»† -->
+                    <!-- KHU VỰC TÀI KHOẢN & MASCOT BADGE CÔNG NGHỆ -->
                     <div class="flex items-center space-x-3 shrink-0">
                         <div class="text-right hidden sm:block">
-                            <!-- TÃªn User -->
+                            <!-- Tên User -->
                             <p class="text-xs font-bold text-white tracking-wide" x-text="
-                                activePage === 'farmer' ? 'ChÃº Hai XoÃ n' :
+                                activePage === 'farmer' ? 'Chú Hai Xoàn' :
                                 activePage === 'buyer' ? 'VinaAgr Export' :
-                                activePage === 'inspection' ? 'Nguyá»…n VÄƒn Äá»‹nh' : 'Admin Há»‡ Thá»‘ng'
+                                activePage === 'inspection' ? 'Nguyễn Văn Định' : 'Admin Hệ Thống'
                             "></p>
-                            <!-- Chá»©c danh -->
+                            <!-- Chức danh -->
                             <div class="flex items-center justify-end gap-1 text-[10px]">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                                 <span class="text-emerald-300 font-medium" x-text="
-                                    activePage === 'farmer' ? 'NÃ´ng DÃ¢n (Cái Bè)' :
-                                    activePage === 'buyer' ? 'ThÆ°Æ¡ng Gia Thu Mua' :
-                                    activePage === 'inspection' ? 'NV Tháº©m Äá»‹nh VÆ°á»n' : 'Quáº£n Trá»‹ ViÃªn'
+                                    activePage === 'farmer' ? 'Nông Dân (Cái Bè)' :
+                                    activePage === 'buyer' ? 'Thương Gia Thu Mua' :
+                                    activePage === 'inspection' ? 'NV Thẩm Định Vườn' : 'Quản Trị Viên'
                                 "></span>
                             </div>
                         </div>
 
-                        <!-- MASCOT AVATAR Táº O Báº°NG VECTOR ICONS -->
+                        <!-- MASCOT AVATAR TẠO BẰNG VECTOR ICONS -->
                         <div class="w-10 h-10 rounded-2xl flex items-center justify-center text-lg shadow-md border border-emerald-400/40 transition-transform hover:scale-105"
                              :class="
                                 activePage === 'farmer' ? 'bg-amber-500/20 text-amber-300' :
@@ -176,19 +176,19 @@
                 </div>
             </div>
 
-            <!-- MOBILE NAV (KHI XEM TRÃŠN ÄIá»†N THOáº I) -->
+            <!-- MOBILE NAV (KHI XEM TRÊN ĐIỆN THOẠI) -->
             <div class="lg:hidden flex bg-emerald-950 text-center border-t border-emerald-800/60 text-xs text-white">
-                <button @click="activePage = 'farmer'" :class="activePage === 'farmer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">ðŸ‘¨â€ðŸŒ¾ NÃ´ng DÃ¢n</button>
-                <button @click="activePage = 'buyer'" :class="activePage === 'buyer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">ðŸ¢ ThÆ°Æ¡ng Gia</button>
-                <button @click="activePage = 'inspection'" :class="activePage === 'inspection' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">ðŸ“‹ Kháº£o SÃ¡t</button>
-                <button @click="activePage = 'admin'" :class="activePage === 'admin' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">ðŸ›¡ï¸ Admin</button>
+                <button @click="activePage = 'farmer'" :class="activePage === 'farmer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">👨‍🌾 Nông Dân</button>
+                <button @click="activePage = 'buyer'" :class="activePage === 'buyer' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">🏢 Thương Gia</button>
+                <button @click="activePage = 'inspection'" :class="activePage === 'inspection' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">📋 Khảo Sát</button>
+                <button @click="activePage = 'admin'" :class="activePage === 'admin' ? 'bg-emerald-600 font-bold' : ''" class="flex-1 py-2.5">🛡️ Admin</button>
             </div>
         </header>
         <!-- DYNAMIC CONTENT CONTAINER -->
         <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
 
             <!-- ========================================================================= -->
-            <!-- PAGE 1: FARMER PAGE (TRANG NÃ”NG DÃ‚N ÄÄ‚NG HÃ€NG & CHá»ŒN THÆ¯Æ NG GIA) -->
+            <!-- PAGE 1: FARMER PAGE (TRANG NÔNG DÂN ĐĂNG HÀNG & CHỌN THƯƠNG GIA) -->
             <!-- ========================================================================= -->
             <div x-show="activePage === 'farmer'" class="space-y-6" x-cloak>
 
@@ -198,10 +198,10 @@
                     <div class="space-y-1">
                         <div
                             class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/30 border border-emerald-400/30 rounded-full text-xs font-semibold text-emerald-200">
-                            <i class="fa-solid fa-circle text-emerald-400 text-[8px] animate-pulse"></i> á»¨ng dá»¥ng dÃ nh
-                            cho NgÆ°á»i sáº£n xuáº¥t / NÃ´ng DÃ¢n
+                            <i class="fa-solid fa-circle text-emerald-400 text-[8px] animate-pulse"></i> Ứng dụng dành
+                            cho Người sản xuất / Nông Dân
                         </div>
-                        <h2 class="text-2xl font-black">Xin chÃ o ChÃº Hai XoÃ n! ðŸ‘‹</h2>
+                        <h2 class="text-2xl font-black">Xin chào Chú Hai Xoàn! 👋</h2>
                         <p class="text-xs text-emerald-100 transition-all duration-500 min-h-[20px]"
                             x-html="dynamicTicker[tickerIndex]">
                         </p>
@@ -210,7 +210,7 @@
                     <button @click="showAddModal = true"
                         class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-5 py-3 rounded-xl shadow-md flex items-center gap-2 text-sm transition-all shrink-0">
                         <i class="fa-solid fa-plus-circle text-base"></i>
-                        <span>ÄÄƒng LÃ´ NÃ´ng Sáº£n Má»›i</span>
+                        <span>Đăng Lô Nông Sản Mới</span>
                     </button>
                 </div>
 
@@ -218,31 +218,31 @@
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                         <span
-                            class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded">LÃ´
-                            Äang BÃ¡n</span>
-                        <h3 class="text-xl font-bold text-slate-900 mt-2">1 LÃ´ HÃ ng</h3>
-                        <p class="text-xs text-slate-500">Sáº§u RiÃªng Ri6 (8 Táº¥n)</p>
+                            class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded">Lô
+                            Đang Bán</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">1 Lô Hàng</h3>
+                        <p class="text-xs text-slate-500">Sầu Riêng Ri6 (8 Tấn)</p>
                     </div>
                     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                         <span
-                            class="text-[10px] font-extrabold text-amber-700 uppercase tracking-wider bg-amber-50 px-2 py-0.5 rounded">BÃ¡o
-                            GiÃ¡ Má»›i</span>
-                        <h3 class="text-xl font-bold text-slate-900 mt-2">3 Äá» Nghá»‹</h3>
-                        <p class="text-xs text-emerald-600 font-semibold">Cáº¡nh tranh cao</p>
+                            class="text-[10px] font-extrabold text-amber-700 uppercase tracking-wider bg-amber-50 px-2 py-0.5 rounded">Báo
+                            Giá Mới</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">3 Đề Nghị</h3>
+                        <p class="text-xs text-emerald-600 font-semibold">Cạnh tranh cao</p>
                     </div>
                     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                         <span
-                            class="text-[10px] font-extrabold text-blue-700 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded">Lá»‹ch
-                            Xem VÆ°á»n</span>
+                            class="text-[10px] font-extrabold text-blue-700 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded">Lịch
+                            Xem Vườn</span>
                         <h3 class="text-xl font-bold text-slate-900 mt-2">22/10/2026</h3>
-                        <p class="text-xs text-slate-500">ThÆ°Æ¡ng gia VinaAgr</p>
+                        <p class="text-xs text-slate-500">Thương gia VinaAgr</p>
                     </div>
                     <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
                         <span
-                            class="text-[10px] font-extrabold text-purple-700 uppercase tracking-wider bg-purple-50 px-2 py-0.5 rounded">Æ¯á»›c
-                            TÃ­nh Thu Vá»</span>
-                        <h3 class="text-xl font-bold text-emerald-700 mt-2">680 Triá»‡u</h3>
-                        <p class="text-xs text-slate-500">Theo giÃ¡ 85.000Ä‘/kg</p>
+                            class="text-[10px] font-extrabold text-purple-700 uppercase tracking-wider bg-purple-50 px-2 py-0.5 rounded">Ước
+                            Tính Thu Về</span>
+                        <h3 class="text-xl font-bold text-emerald-700 mt-2">680 Triệu</h3>
+                        <p class="text-xs text-slate-500">Theo giá 85.000đ/kg</p>
                     </div>
                 </div>
 
@@ -253,11 +253,11 @@
                     <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-5">
                         <div class="border-b border-slate-200 pb-3">
                             <h3 class="text-lg font-extrabold text-slate-900 flex items-center gap-2">
-                                <i class="fa-solid fa-scale-balanced text-emerald-600"></i> Báº£ng So SÃ¡nh GiÃ¡ Mua ThÆ°Æ¡ng
-                                Gia Äá» Nghá»‹
+                                <i class="fa-solid fa-scale-balanced text-emerald-600"></i> Bảng So Sánh Giá Mua Thương
+                                Gia Đề Nghị
                             </h3>
-                            <p class="text-xs text-slate-500 mt-0.5">Tá»± Ä‘á»™ng xáº¿p tá»« **GiÃ¡ Cao Nháº¥t** xuá»‘ng Tháº¥p. ChÃº báº¥m
-                                nÃºt "CHá»ŒN BÃN BÃŠN NÃ€Y" Ä‘á»ƒ chá»‘t Ä‘Æ¡n.</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Tự động xếp từ **Giá Cao Nhất** xuống Thấp. Chú bấm
+                                nút "CHỌN BÁN BÊN NÀY" để chốt đơn.</p>
                         </div>
 
                         <div class="space-y-4">
@@ -268,7 +268,7 @@
                                     <template x-if="idx === 0">
                                         <div
                                             class="absolute -top-3 left-4 bg-amber-500 text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow flex items-center gap-1">
-                                            <i class="fa-solid fa-crown text-yellow-200"></i> GIÃ CAO NHáº¤T CHO NHÃ€ VÆ¯á»œN
+                                            <i class="fa-solid fa-crown text-yellow-200"></i> GIÁ CAO NHẤT CHO NHÀ VƯỜN
                                         </div>
                                     </template>
 
@@ -278,25 +278,25 @@
                                                 <h4 class="font-bold text-slate-900 text-base" x-text="offer.buyerName">
                                                 </h4>
                                                 <span class="text-amber-500 text-xs font-bold"
-                                                    x-text="'â­ ' + offer.rating"></span>
+                                                    x-text="'⭐ ' + offer.rating"></span>
                                             </div>
                                             <p class="text-xs text-slate-500"
-                                                x-text="offer.companyType + ' â€¢ (' + offer.reviewsCount + ' Ä‘Æ¡n uy tÃ­n)'">
+                                                x-text="offer.companyType + ' • (' + offer.reviewsCount + ' đơn uy tín)'">
                                             </p>
 
                                             <div class="pt-2 text-xs space-y-1 text-slate-700">
                                                 <p><i class="fa-solid fa-shield-heart text-emerald-600 w-4"></i>
-                                                    <strong>Äáº·t Cá»c:</strong> <span x-text="offer.depositTerms"></span>
+                                                    <strong>Đặt Cọc:</strong> <span x-text="offer.depositTerms"></span>
                                                 </p>
-                                                <p><i class="fa-solid fa-truck text-blue-600 w-4"></i> <strong>Váº­n
-                                                        Chuyá»ƒn:</strong> <span x-text="offer.logistics"></span></p>
+                                                <p><i class="fa-solid fa-truck text-blue-600 w-4"></i> <strong>Vận
+                                                        Chuyển:</strong> <span x-text="offer.logistics"></span></p>
                                             </div>
                                         </div>
 
                                         <div
                                             class="text-right border-t md:border-t-0 pt-3 md:pt-0 border-slate-200 shrink-0">
-                                            <span class="text-xs font-bold text-slate-500 block uppercase">GiÃ¡ Äá»
-                                                Nghá»‹</span>
+                                            <span class="text-xs font-bold text-slate-500 block uppercase">Giá Đề
+                                                Nghị</span>
                                             <span class="text-2xl font-black"
                                                 :class="idx === 0 ? 'text-emerald-700' : 'text-slate-900'"
                                                 x-text="offer.priceFormatted"></span>
@@ -305,15 +305,15 @@
                                                 <template x-if="offer.status === 'accepted'">
                                                     <span
                                                         class="bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-extrabold block shadow-sm">
-                                                        <i class="fa-solid fa-circle-check mr-1"></i> ChÃº Đã Chá»n BÃªn
-                                                        NÃ y
+                                                        <i class="fa-solid fa-circle-check mr-1"></i> Chú Đã Chọn Bên
+                                                        Này
                                                     </span>
                                                 </template>
                                                 <template x-if="offer.status !== 'accepted'">
                                                     <button @click="acceptOfferForFarmer(offer)"
                                                         :class="idx === 0 ? 'bg-emerald-600 hover:bg-emerald-700 text-white' : 'bg-slate-200 hover:bg-slate-300 text-slate-800'"
                                                         class="px-4 py-2 rounded-xl text-xs font-bold shadow-sm transition-all">
-                                                        Chá»n BÃ¡n BÃªn NÃ y
+                                                        Chọn Bán Bên Này
                                                     </button>
                                                 </template>
                                             </div>
@@ -327,49 +327,49 @@
                     <!-- Right Column: Crop Detail -->
                     <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-5">
                         <div class="border-b border-slate-200 pb-3">
-                            <h3 class="text-base font-extrabold text-slate-900">ðŸ“¦ Chi Tiáº¿t LÃ´ HÃ ng Äang ÄÄƒng</h3>
+                            <h3 class="text-base font-extrabold text-slate-900">📦 Chi Tiết Lô Hàng Đang Đăng</h3>
                         </div>
 
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs">
                             <h4 class="font-extrabold text-brand-800 text-sm" x-text="selectedCrop.title"></h4>
-                            <p class="text-slate-600"><strong>Sáº£n lÆ°á»£ng:</strong> <span
+                            <p class="text-slate-600"><strong>Sản lượng:</strong> <span
                                     x-text="selectedCrop.quantity"></span></p>
-                            <p class="text-slate-600"><strong>TiÃªu chuáº©n:</strong> <span
+                            <p class="text-slate-600"><strong>Tiêu chuẩn:</strong> <span
                                     class="bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded"
                                     x-text="selectedCrop.standard"></span></p>
-                            <p class="text-slate-600"><strong>Äá»‹a chá»‰ vÆ°á»n:</strong> <span
+                            <p class="text-slate-600"><strong>Địa chỉ vườn:</strong> <span
                                     x-text="selectedCrop.location"></span></p>
-                            <p class="text-amber-700 font-bold"><strong>NgÃ y cáº¯t dá»± kiáº¿n:</strong> 25/10/2026 (CÃ²n 5
-                                ngÃ y)</p>
+                            <p class="text-amber-700 font-bold"><strong>Ngày cắt dự kiến:</strong> 25/10/2026 (Còn 5
+                                ngày)</p>
                         </div>
 
                         <div>
-                            <h4 class="text-xs font-extrabold text-slate-800 mb-3">ðŸ“Œ Tiáº¿n TrÃ¬nh Giao Dá»‹ch Táº­n VÆ°á»n:
+                            <h4 class="text-xs font-extrabold text-slate-800 mb-3">📌 Tiến Trình Giao Dịch Tận Vườn:
                             </h4>
                             <div class="space-y-3 text-xs">
                                 <div class="flex items-center gap-3">
                                     <span
                                         class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">1</span>
                                     <div>
-                                        <p class="font-bold text-slate-800">Đã đăng lÃ´ hÃ ng</p>
-                                        <p class="text-[10px] text-slate-500">20/10/2026 - Đã duyá»‡t</p>
+                                        <p class="font-bold text-slate-800">Đã đăng lô hàng</p>
+                                        <p class="text-[10px] text-slate-500">20/10/2026 - Đã duyệt</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span
                                         class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">2</span>
                                     <div>
-                                        <p class="font-bold text-slate-800">ThÆ°Æ¡ng gia chÃ o giÃ¡</p>
-                                        <p class="text-[10px] text-slate-500">3 Ä‘á» nghá»‹ cáº¡nh tranh</p>
+                                        <p class="font-bold text-slate-800">Thương gia chào giá</p>
+                                        <p class="text-[10px] text-slate-500">3 đề nghị cạnh tranh</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span
                                         class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-[10px]">3</span>
                                     <div>
-                                        <p class="font-bold text-slate-800">ChÃº chá»n thương gia</p>
+                                        <p class="font-bold text-slate-800">Chú chọn thương gia</p>
                                         <p class="text-[10px] text-emerald-600 font-semibold"
-                                            x-text="selectedCrop.status === 'matched' ? 'Đã chá»n VinaAgr' : 'Äang Ä‘á»£i chÃº chá»n'">
+                                            x-text="selectedCrop.status === 'matched' ? 'Đã chọn VinaAgr' : 'Đang đợi chú chọn'">
                                         </p>
                                     </div>
                                 </div>
@@ -377,16 +377,16 @@
                                     <span
                                         class="w-6 h-6 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-[10px]">4</span>
                                     <div>
-                                        <p class="font-bold text-slate-800">ThÆ°Æ¡ng gia xem vÆ°á»n</p>
-                                        <p class="text-[10px] text-slate-500">Háº¹n ngÃ y 22/10/2026</p>
+                                        <p class="font-bold text-slate-800">Thương gia xem vườn</p>
+                                        <p class="text-[10px] text-slate-500">Hẹn ngày 22/10/2026</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3 opacity-60">
                                     <span
                                         class="w-6 h-6 rounded-full bg-slate-300 text-slate-700 flex items-center justify-center font-bold text-[10px]">5</span>
                                     <div>
-                                        <p class="font-bold text-slate-800">Nháº­n cá»c & Cáº¯t bÃ¡n</p>
-                                        <p class="text-[10px] text-slate-500">HoÃ n táº¥t há»£p Ä‘á»“ng</p>
+                                        <p class="font-bold text-slate-800">Nhận cọc & Cắt bán</p>
+                                        <p class="text-[10px] text-slate-500">Hoàn tất hợp đồng</p>
                                     </div>
                                 </div>
                             </div>
@@ -397,7 +397,7 @@
             </div>
 
             <!-- ========================================================================= -->
-            <!-- PAGE 2: BUYER MARKETPLACE (SÃ€N DÃ€NH CHO THÆ¯Æ NG GIA THU MUA) -->
+            <!-- PAGE 2: BUYER MARKETPLACE (SÀN DÀNH CHO THƯƠNG GIA THU MUA) -->
             <!-- ========================================================================= -->
             <div x-show="activePage === 'buyer'" class="space-y-6" x-cloak>
 
@@ -406,20 +406,20 @@
                     <div>
                         <div
                             class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-semibold text-blue-700">
-                            <i class="fa-solid fa-store"></i> DÃ nh cho ThÆ°Æ¡ng LÃ¡i, Vá»±a NÃ´ng Sáº£n & Doanh Nghiá»‡p Xuáº¥t Kháº©u
+                            <i class="fa-solid fa-store"></i> Dành cho Thương Lái, Vựa Nông Sản & Doanh Nghiệp Xuất Khẩu
                         </div>
-                        <h2 class="text-xl font-extrabold text-slate-900 mt-2">SÃ n NÃ´ng Sáº£n Äang TÃ¬m ÄÆ¡n Vá»‹ Thu Mua Táº­n
-                            VÆ°á»n</h2>
-                        <p class="text-xs text-slate-500">Xem danh sÃ¡ch nÃ´ng sáº£n sáº¯p thu hoáº¡ch, gá»­i bÃ¡o giÃ¡ mua trá»±c
-                            tiáº¿p cho nÃ´ng dÃ¢n.</p>
+                        <h2 class="text-xl font-extrabold text-slate-900 mt-2">Sàn Nông Sản Đang Tìm Đơn Vị Thu Mua Tận
+                            Vườn</h2>
+                        <p class="text-xs text-slate-500">Xem danh sách nông sản sắp thu hoạch, gửi báo giá mua trực
+                            tiếp cho nông dân.</p>
                     </div>
 
                     <div class="flex items-center space-x-2">
-                        <input type="text" placeholder="TÃ¬m loáº¡i trÃ¡i cÃ¢y, khu vá»±c..."
+                        <input type="text" placeholder="Tìm loại trái cây, khu vực..."
                             class="text-xs border border-slate-300 rounded-xl px-3 py-2.5 w-60 outline-none focus:ring-2 focus:ring-blue-500">
                         <button
-                            class="bg-blue-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm hover:bg-blue-700 transition-all">Lá»c
-                            TÃ¬m</button>
+                            class="bg-blue-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm hover:bg-blue-700 transition-all">Lọc
+                            Tìm</button>
                     </div>
                 </div>
 
@@ -442,17 +442,17 @@
                                 <div class="p-5 space-y-3">
                                     <div>
                                         <h3 class="font-extrabold text-slate-900 text-base" x-text="crop.title"></h3>
-                                        <p class="text-xs text-slate-500" x-text="'Chá»§ vÆ°á»n: ' + crop.farmerName"></p>
+                                        <p class="text-xs text-slate-500" x-text="'Chủ vườn: ' + crop.farmerName"></p>
                                     </div>
 
                                     <div
                                         class="grid grid-cols-2 gap-2 text-xs bg-slate-50 p-3 rounded-xl border border-slate-100">
                                         <div>
-                                            <span class="text-slate-400 block text-[10px]">Sáº¢N LÆ¯á»¢NG</span>
+                                            <span class="text-slate-400 block text-[10px]">SẢN LƯỢNG</span>
                                             <span class="font-bold text-slate-800" x-text="crop.quantity"></span>
                                         </div>
                                         <div>
-                                            <span class="text-slate-400 block text-[10px]">GIÃ SÃ€N MONG MUá»N</span>
+                                            <span class="text-slate-400 block text-[10px]">GIÁ SÀN MONG MUỐN</span>
                                             <span class="font-bold text-brand-700" x-text="crop.askingPrice"></span>
                                         </div>
                                     </div>
@@ -463,7 +463,7 @@
                                 <button @click="openBuyerBidModal(crop)"
                                     class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl text-xs shadow-sm transition-all flex items-center justify-center gap-1.5">
                                     <i class="fa-solid fa-gavel"></i>
-                                    <span>Gá»­i BÃ¡o GiÃ¡ Thu Mua</span>
+                                    <span>Gửi Báo Giá Thu Mua</span>
                                 </button>
                             </div>
                         </div>
@@ -472,7 +472,7 @@
             </div>
 
             <!-- ========================================================================= -->
-            <!-- PAGE 3: FIELD INSPECTION (KHáº¢O SÃT CHáº¤T LÆ¯á»¢NG VÆ¯á»œN & CHá»T Cá»ŒC) -->
+            <!-- PAGE 3: FIELD INSPECTION (KHẢO SÁT CHẤT LƯỢNG VƯỜN & CHỐT CỌC) -->
             <!-- ========================================================================= -->
             <div x-show="activePage === 'inspection'" class="space-y-6" x-cloak>
 
@@ -481,12 +481,12 @@
                     <div>
                         <div
                             class="inline-flex items-center gap-1.5 px-3 py-1 bg-purple-50 border border-purple-200 rounded-full text-xs font-semibold text-purple-700">
-                            <i class="fa-solid fa-clipboard-check"></i> Quy TrÃ¬nh Kháº£o SÃ¡t Cháº¥t LÆ°á»£ng Thá»±c Äá»‹a
+                            <i class="fa-solid fa-clipboard-check"></i> Quy Trình Khảo Sát Chất Lượng Thực Địa
                         </div>
-                        <h2 class="text-xl font-extrabold text-slate-900 mt-2">Danh SÃ¡ch Lá»‹ch Háº¹n Kháº£o SÃ¡t VÆ°á»n & Tháº©m
-                            Äá»‹nh TrÃ¡i</h2>
-                        <p class="text-xs text-slate-500">ÄÆ¡n vá»‹ thu mua cá»­ nhÃ¢n viÃªn xuá»‘ng tận vườn tháº©m định Ä‘á»™ chÃ­n,
-                            kÃ­ch thÆ°á»›c vÃ  chuyá»ƒn cá»c.</p>
+                        <h2 class="text-xl font-extrabold text-slate-900 mt-2">Danh Sách Lịch Hẹn Khảo Sát Vườn & Thẩm
+                            Định Trái</h2>
+                        <p class="text-xs text-slate-500">Đơn vị thu mua cử nhân viên xuống tận vườn thẩm định độ chín,
+                            kích thước và chuyển cọc.</p>
                     </div>
                 </div>
 
@@ -504,43 +504,43 @@
                                     </div>
                                     <div>
                                         <h3 class="font-extrabold text-slate-900 text-lg"
-                                            x-text="inspection.cropTitle + ' - NhÃ  VÆ°á»n ' + inspection.farmerName"></h3>
+                                            x-text="inspection.cropTitle + ' - Nhà Vườn ' + inspection.farmerName"></h3>
                                         <p class="text-xs text-slate-500"
-                                            x-text="'ThÆ°Æ¡ng gia chá»‘t mua: ' + inspection.buyerName"></p>
+                                            x-text="'Thương gia chốt mua: ' + inspection.buyerName"></p>
                                     </div>
                                 </div>
 
                                 <div class="flex items-center space-x-2">
                                     <a :href="'tel:' + inspection.farmerPhone"
                                         class="px-3.5 py-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
-                                        <i class="fa-solid fa-phone"></i> Gá»i NÃ´ng DÃ¢n
+                                        <i class="fa-solid fa-phone"></i> Gọi Nông Dân
                                     </a>
                                     <a :href="'tel:' + inspection.buyerPhone"
                                         class="px-3.5 py-2 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
-                                        <i class="fa-solid fa-phone"></i> Gá»i ThÆ°Æ¡ng Gia
+                                        <i class="fa-solid fa-phone"></i> Gọi Thương Gia
                                     </a>
                                 </div>
                             </div>
 
                             <!-- Stepper Progress -->
                             <div>
-                                <p class="text-xs font-bold text-slate-700 mb-2">Tráº¡ng thÃ¡i kháº£o sÃ¡t thá»±c Ä‘á»‹a:</p>
+                                <p class="text-xs font-bold text-slate-700 mb-2">Trạng thái khảo sát thực địa:</p>
                                 <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center text-xs">
                                     <div :class="inspection.step >= 1 ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
                                         class="p-2.5 rounded-xl">
-                                        1. Đã Káº¿t Ná»‘i SÄT
+                                        1. Đã Kết Nối SĐT
                                     </div>
                                     <div :class="inspection.step >= 2 ? 'bg-emerald-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
                                         class="p-2.5 rounded-xl">
-                                        2. Đã Đến Táº­n VÆ°á»n
+                                        2. Đã Đến Tận Vườn
                                     </div>
                                     <div :class="inspection.step >= 3 ? 'bg-amber-500 text-white font-bold' : 'bg-slate-100 text-slate-400'"
                                         class="p-2.5 rounded-xl">
-                                        3. Tháº©m Äá»‹nh Äáº¡t Chuáº©n
+                                        3. Thẩm Định Đạt Chuẩn
                                     </div>
                                     <div :class="inspection.step >= 4 ? 'bg-purple-600 text-white font-bold' : 'bg-slate-100 text-slate-400'"
                                         class="p-2.5 rounded-xl">
-                                        4. Đã Äáº·t Cá»c & Chá»‘t
+                                        4. Đã Đặt Cọc & Chốt
                                     </div>
                                 </div>
                             </div>
@@ -549,26 +549,26 @@
                             <div
                                 class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                                 <div class="space-y-1">
-                                    <p class="text-xs font-bold text-slate-800">BiÃªn Báº£n Tháº©m Äá»‹nh Táº¡i VÆ°á»n:</p>
+                                    <p class="text-xs font-bold text-slate-800">Biên Bản Thẩm Định Tại Vườn:</p>
                                     <div class="flex flex-wrap gap-2 text-xs">
                                         <span
                                             class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i
-                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> Trá»ng lÆ°á»£ng: 2.2kg
-                                            - 3.5kg/trÃ¡i</span>
+                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> Trọng lượng: 2.2kg
+                                            - 3.5kg/trái</span>
                                         <span
                                             class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i
-                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> MÃºi vÃ ng cÆ¡m dáº»o,
-                                            Ä‘á»™ Ä‘Æ°á»ng > 28Â°</span>
+                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> Múi vàng cơm dẻo,
+                                            độ đường > 28°</span>
                                         <span
                                             class="bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-slate-700"><i
-                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> Tá»· lá»‡ hao há»¥t dá»±
-                                            kiáº¿n < 2%</span>
+                                                class="fa-solid fa-check text-emerald-600 mr-1"></i> Tỷ lệ hao hụt dự
+                                            kiến < 2%</span>
                                     </div>
                                 </div>
 
                                 <button @click="advanceInspectionStep(inspection)"
                                     class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-sm shrink-0">
-                                    XÃ¡c Nháº­n Äáº¡t Chuáº©n & Chuyá»ƒn Cá»c
+                                    Xác Nhận Đạt Chuẩn & Chuyển Cọc
                                 </button>
                             </div>
 
@@ -578,7 +578,7 @@
             </div>
 
             <!-- ========================================================================= -->
-            <!-- PAGE 4: ADMIN PORTAL (PORTAL QUáº¢N TRá»Š ADMIN) -->
+            <!-- PAGE 4: ADMIN PORTAL (PORTAL QUẢN TRỊ ADMIN) -->
             <!-- ========================================================================= -->
             <div x-show="activePage === 'admin'" class="space-y-6" x-cloak>
 
@@ -587,23 +587,23 @@
                     <div>
                         <div
                             class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-xs font-semibold text-emerald-300">
-                            <i class="fa-solid fa-shield-halved"></i> Cá»•ng GiÃ¡m SÃ¡t Quáº£n Trá»‹ Há»‡ Thá»‘ng AgriConnect
+                            <i class="fa-solid fa-shield-halved"></i> Cổng Giám Sát Quản Trị Hệ Thống AgriConnect
                         </div>
-                        <h2 class="text-2xl font-black mt-2">Báº£ng Äiá»u Khiá»ƒn Admin Tá»•ng Thá»ƒ</h2>
-                        <p class="text-xs text-slate-400">Kiá»ƒm duyá»‡t lÃ´ hÃ ng tá»« nÃ´ng dÃ¢n, giÃ¡m sÃ¡t ma tráº­n giÃ¡ Ä‘áº¥u giÃ¡
+                        <h2 class="text-2xl font-black mt-2">Bảng Điều Khiển Admin Tổng Thể</h2>
+                        <p class="text-xs text-slate-400">Kiểm duyệt lô hàng từ nông dân, giám sát ma trận giá đấu giá
                             thương gia.</p>
                     </div>
 
                     <button @click="showAddModal = true"
                         class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-2.5 rounded-xl text-xs shadow-sm">
-                        + Táº¡o LÃ´ HÃ ng Há»— Trá»£ NÃ´ng DÃ¢n
+                        + Tạo Lô Hàng Hỗ Trợ Nông Dân
                     </button>
                 </div>
 
                 <!-- Admin Analytics Chart -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h3 class="font-extrabold text-slate-800 text-base mb-4">ðŸ“ˆ Biáº¿n Äá»™ng GiÃ¡ Thu Mua Trung BÃ¬nh Theo
-                        NgÃ y (VNÄ/kg)</h3>
+                    <h3 class="font-extrabold text-slate-800 text-base mb-4">📈 Biến Động Giá Thu Mua Trung Bình Theo
+                        Ngày (VNĐ/kg)</h3>
                     <div class="h-64">
                         <canvas id="adminChart"></canvas>
                     </div>
@@ -612,19 +612,19 @@
                 <!-- Admin Listings Approval Table -->
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
                     <div class="p-5 border-b border-slate-200">
-                        <h3 class="font-bold text-slate-900 text-base">Quáº£n LÃ½ Táº¥t Cáº£ LÃ´ NÃ´ng Sáº£n TrÃªn Ná»n Táº£ng</h3>
+                        <h3 class="font-bold text-slate-900 text-base">Quản Lý Tất Cả Lô Nông Sản Trên Nền Tảng</h3>
                     </div>
 
                     <div class="overflow-x-auto text-xs">
                         <table class="w-full text-left">
                             <thead class="bg-slate-50 text-slate-500 font-bold uppercase border-b border-slate-200">
                                 <tr>
-                                    <th class="p-4">NÃ´ng Sáº£n</th>
-                                    <th class="p-4">Chá»§ VÆ°á»n</th>
-                                    <th class="p-4">Sáº£n LÆ°á»£ng</th>
-                                    <th class="p-4">Äá»‹a Chá»‰ VÆ°á»n</th>
-                                    <th class="p-4">Tráº¡ng ThÃ¡i</th>
-                                    <th class="p-4 text-center">HÃ nh Äá»™ng Admin</th>
+                                    <th class="p-4">Nông Sản</th>
+                                    <th class="p-4">Chủ Vườn</th>
+                                    <th class="p-4">Sản Lượng</th>
+                                    <th class="p-4">Địa Chỉ Vườn</th>
+                                    <th class="p-4">Trạng Thái</th>
+                                    <th class="p-4 text-center">Hành Động Admin</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-200">
@@ -642,7 +642,7 @@
                                         <td class="p-4 text-center">
                                             <button @click="activePage = 'farmer'; selectedCropId = crop.id"
                                                 class="bg-brand-700 text-white px-3 py-1.5 rounded-lg font-bold">
-                                                Xem Báº£ng GiÃ¡
+                                                Xem Bảng Giá
                                             </button>
                                         </td>
                                     </tr>
@@ -657,42 +657,42 @@
         </main>
 
         <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-auto">
-            <p><strong>AgriConnect Platform Â© 2026</strong> â€” Ná»n Táº£ng Trá»±c Tuyáº¿n Káº¿t Ná»‘i NgÆ°á»i Sáº£n Xuáº¥t & ÄÆ¡n Vá»‹ Thu
-                Mua NÃ´ng Sáº£n Viá»‡t Nam</p>
+            <p><strong>AgriConnect Platform © 2026</strong> — Nền Tảng Trực Tuyến Kết Nối Người Sản Xuất & Đơn Vị Thu
+                Mua Nông Sản Việt Nam</p>
         </footer>
 
     </div>
 
-    <!-- MODAL 1: DÃ€NH CHO NÃ”NG DÃ‚N ÄÄ‚NG HÃ€NG -->
-    <!-- MODAL 1: DÃ€NH CHO NÃ”NG DÃ‚N ÄÄ‚NG HÃ€NG (ÄÃƒ Sá»¬A Lá»–I Vá»  GIAO DIá»†N) -->
+    <!-- MODAL 1: DÀNH CHO NÔNG DÂN ĐĂNG HÀNG -->
+    <!-- MODAL 1: DÀNH CHO NÔNG DÂN ĐĂNG HÀNG (ĐÃ SỬA LỖI VỠ GIAO DIỆN) -->
     <div x-show="showAddModal"
         class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" x-cloak>
         <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 space-y-4">
 
             <!-- Header Modal -->
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-                <h3 class="font-extrabold text-slate-900 text-base">ÄÄƒng BÃ i Rao BÃ¡n LÃ´ NÃ´ng Sáº£n</h3>
+                <h3 class="font-extrabold text-slate-900 text-base">Đăng Bài Rao Bán Lô Nông Sản</h3>
                 <button @click="showAddModal = false" class="text-slate-400 hover:text-slate-600"><i
                         class="fa-solid fa-xmark text-lg"></i></button>
             </div>
 
-            <!-- Form Nháº­p Liá»‡u (Xáº¿p dá»c chuáº©n dáº¡ng Cá»™t) -->
+            <!-- Form Nhập Liệu (Xếp dọc chuẩn dạng Cột) -->
             <form @submit.prevent="addNewCropListing()" class="space-y-3 text-xs">
                 <div>
-                    <label class="block font-bold text-slate-700 mb-1">TÃªn NÃ´ng Sáº£n & Giá»‘ng TrÃ¡i</label>
-                    <input type="text" x-model="newForm.title" placeholder="VÃ­ dá»¥: Sáº§u RiÃªng Ri6 Há»¯u CÆ¡"
+                    <label class="block font-bold text-slate-700 mb-1">Tên Nông Sản & Giống Trái</label>
+                    <input type="text" x-model="newForm.title" placeholder="Ví dụ: Sầu Riêng Ri6 Hữu Cơ"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none focus:ring-2 focus:ring-emerald-500"
                         required>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block font-bold text-slate-700 mb-1">Há» TÃªn Chá»§ VÆ°á»n</label>
-                        <input type="text" x-model="newForm.farmerName" placeholder="ChÃº Hai XoÃ n"
+                        <label class="block font-bold text-slate-700 mb-1">Họ Tên Chủ Vườn</label>
+                        <input type="text" x-model="newForm.farmerName" placeholder="Chú Hai Xoàn"
                             class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                     </div>
                     <div>
-                        <label class="block font-bold text-slate-700 mb-1">Sá»‘ Äiá»‡n Thoáº¡i</label>
+                        <label class="block font-bold text-slate-700 mb-1">Số Điện Thoại</label>
                         <input type="text" x-model="newForm.farmerPhone" placeholder="0913.xxx.xxx"
                             class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                     </div>
@@ -700,95 +700,95 @@
 
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block font-bold text-slate-700 mb-1">Sáº£n LÆ°á»£ng Dá»± Kiáº¿n</label>
-                        <input type="text" x-model="newForm.quantity" placeholder="VÃ­ dá»¥: 8 Táº¥n"
+                        <label class="block font-bold text-slate-700 mb-1">Sản Lượng Dự Kiến</label>
+                        <input type="text" x-model="newForm.quantity" placeholder="Ví dụ: 8 Tấn"
                             class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                     </div>
                     <div>
-                        <label class="block font-bold text-slate-700 mb-1">TiÃªu Chuáº©n NÃ´ng Nghiá»‡p</label>
+                        <label class="block font-bold text-slate-700 mb-1">Tiêu Chuẩn Nông Nghiệp</label>
                         <select x-model="newForm.standard"
                             class="w-full border border-slate-300 rounded-xl p-2.5 outline-none">
                             <option>VietGAP</option>
                             <option>GlobalGAP</option>
-                            <option>Há»¯u CÆ¡ (Organic)</option>
+                            <option>Hữu Cơ (Organic)</option>
                         </select>
                     </div>
                 </div>
 
                 <div>
-                    <label class="block font-bold text-slate-700 mb-1">Äá»‹a Chá»‰ VÆ°á»n Thu Hoáº¡ch</label>
-                    <input type="text" x-model="newForm.location" placeholder="Huyá»‡n Cái Bè, Tiền Giang"
+                    <label class="block font-bold text-slate-700 mb-1">Địa Chỉ Vườn Thu Hoạch</label>
+                    <input type="text" x-model="newForm.location" placeholder="Huyện Cái Bè, Tiền Giang"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div>
-                    <label class="block font-bold text-slate-700 mb-1">GiÃ¡ Khá»Ÿi Äiá»ƒm Mong Muá»‘n (VNÄ/kg)</label>
-                    <input type="text" x-model="newForm.askingPrice" placeholder="78.000Ä‘/kg"
+                    <label class="block font-bold text-slate-700 mb-1">Giá Khởi Điểm Mong Muốn (VNĐ/kg)</label>
+                    <input type="text" x-model="newForm.askingPrice" placeholder="78.000đ/kg"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div class="pt-3 flex items-center justify-end space-x-2 border-t border-slate-200">
                     <button type="button" @click="showAddModal = false"
-                        class="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold">Há»§y</button>
+                        class="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold">Hủy</button>
                     <button type="submit"
-                        class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold shadow-sm">ÄÄƒng
-                        LÃªn SÃ n Äáº¥u GiÃ¡</button>
+                        class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold shadow-sm">Đăng
+                        Lên Sàn Đấu Giá</button>
                 </div>
             </form>
 
         </div>
     </div>
 
-    <!-- MODAL 2: DÃ€NH CHO THÆ¯Æ NG GIA Gá»¬I BÃO GIÃ -->
+    <!-- MODAL 2: DÀNH CHO THƯƠNG GIA GỬI BÁO GIÁ -->
     <div x-show="showBidModal"
         class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" x-cloak>
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4">
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
                 <h3 class="font-extrabold text-slate-900 text-base"
-                    x-text="'Gá»­i BÃ¡o GiÃ¡ Thu Mua LÃ´: ' + selectedCropForBid.title"></h3>
+                    x-text="'Gửi Báo Giá Thu Mua Lô: ' + selectedCropForBid.title"></h3>
                 <button @click="showBidModal = false" class="text-slate-400 hover:text-slate-600"><i
                         class="fa-solid fa-xmark text-lg"></i></button>
             </div>
 
             <form @submit.prevent="submitBuyerBid()" class="space-y-3 text-xs">
                 <div>
-                    <label class="block font-bold text-slate-700 mb-1">TÃªn Doanh Nghiá»‡p / ThÆ°Æ¡ng LÃ¡i</label>
+                    <label class="block font-bold text-slate-700 mb-1">Tên Doanh Nghiệp / Thương Lái</label>
                     <input type="text" x-model="bidForm.buyerName"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div>
-                    <label class="block font-bold text-slate-700 mb-1">Má»©c GiÃ¡ Thu Mua Äá» Nghá»‹ (VNÄ/kg)</label>
-                    <input type="text" x-model="bidForm.priceFormatted" placeholder="VÃ­ dá»¥: 86.000Ä‘ / kg"
+                    <label class="block font-bold text-slate-700 mb-1">Mức Giá Thu Mua Đề Nghị (VNĐ/kg)</label>
+                    <input type="text" x-model="bidForm.priceFormatted" placeholder="Ví dụ: 86.000đ / kg"
                         class="w-full border border-slate-300 rounded-xl p-2.5 font-bold text-emerald-700 outline-none"
                         required>
                 </div>
 
                 <div>
-                    <label class="block font-bold text-slate-700 mb-1">Äiá»u Khoáº£n Äáº·t Cá»c</label>
+                    <label class="block font-bold text-slate-700 mb-1">Điều Khoản Đặt Cọc</label>
                     <input type="text" x-model="bidForm.depositTerms"
-                        placeholder="VÃ­ dá»¥: Cá»c 30% tận vườn sau khi kiá»ƒm hÃ ng"
+                        placeholder="Ví dụ: Cọc 30% tận vườn sau khi kiểm hàng"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div>
-                    <label class="block font-bold text-slate-700 mb-1">HÃ¬nh Thá»©c Váº­n Chuyá»ƒn</label>
-                    <input type="text" x-model="bidForm.logistics" placeholder="VÃ­ dá»¥: Cho xe cẩu tận vườn bốc xếp"
+                    <label class="block font-bold text-slate-700 mb-1">Hình Thức Vận Chuyển</label>
+                    <input type="text" x-model="bidForm.logistics" placeholder="Ví dụ: Cho xe cẩu tận vườn bốc xếp"
                         class="w-full border border-slate-300 rounded-xl p-2.5 outline-none" required>
                 </div>
 
                 <div class="pt-3 flex items-center justify-end space-x-2 border-t border-slate-200">
                     <button type="button" @click="showBidModal = false"
-                        class="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold">Há»§y</button>
+                        class="px-4 py-2 bg-slate-100 text-slate-600 rounded-xl font-bold">Hủy</button>
                     <button type="submit"
-                        class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-sm">Gá»­i
-                        BÃ¡o GiÃ¡ Cho NÃ´ng DÃ¢n</button>
+                        class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-sm">Gửi
+                        Báo Giá Cho Nông Dân</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- LOGIC Xá»¬ LÃ Dá»® LIá»†U Báº°NG ALPINE.JS -->
+    <!-- LOGIC XỬ LÝ DỮ LIỆU BẰNG ALPINE.JS -->
     <script>
         function appData() {
             return {
@@ -798,16 +798,16 @@
                 selectedCropId: 1,
                 selectedCropForBid: {},
 
-                // 1. THÃ”NG BÃO Tá»° Äá»˜NG CHáº Y Má»–I 5 GIÃ‚Y ON BANNER
+                // 1. THÔNG BÁO TỰ ĐỘNG CHẠY MỖI 5 GIÂY ON BANNER
                 tickerIndex: 0,
                 dynamicTicker: [
-                    'Lô Sầu Riêng Ri6 tại Cái Bè đang có <strong class="text-amber-300 font-bold">3 thương gia chÃ o giÃ¡ mua</strong>. Mức giá cao nhất: <strong class="text-amber-300 font-black text-sm">85.000Ä‘ / kg</strong>.',
-                    'âš¡ VinaAgr Export vừa cập nhật: <strong class="text-amber-300 font-bold">Hỗ trợ 100% xe cẩu tận vườn</strong> bốc xếp cho chú.',
-                    'ðŸ“ˆ Giá Sầu Riêng hôm nay tại Tiền Giang <strong class="text-amber-300 font-bold">tăng 3.000Ä‘/kg</strong> so vá»›i ngÃ y hÃ´m qua!',
-                    'ðŸ“‹ Lịch hẹn: Nhân viên khảo sát sẽ tới kiểm định vườn Sầu Riêng vÃ o <strong class="text-amber-300 font-bold">8:30 sÃ¡ng ngÃ y 22/10</strong>.'
+                    'Lô Sầu Riêng Ri6 tại Cái Bè đang có <strong class="text-amber-300 font-bold">3 thương gia chào giá mua</strong>. Mức giá cao nhất: <strong class="text-amber-300 font-black text-sm">85.000đ / kg</strong>.',
+                    '⚡ VinaAgr Export vừa cập nhật: <strong class="text-amber-300 font-bold">Hỗ trợ 100% xe cẩu tận vườn</strong> bốc xếp cho chú.',
+                    '📈 Giá Sầu Riêng hôm nay tại Tiền Giang <strong class="text-amber-300 font-bold">tăng 3.000đ/kg</strong> so với ngày hôm qua!',
+                    '📋 Lịch hẹn: Nhân viên khảo sát sẽ tới kiểm định vườn Sầu Riêng vào <strong class="text-amber-300 font-bold">8:30 sáng ngày 22/10</strong>.'
                 ],
 
-                // KÃCH HOáº T Äáº¾M GIá»œ KHI Má»ž APP
+                // KÍCH HOẠT ĐẾM GIỜ KHI MỞ APP
                 init() {
                     setInterval(() => {
                         this.tickerIndex = (this.tickerIndex + 1) % this.dynamicTicker.length;
@@ -827,76 +827,76 @@
                 bidForm: {
                     buyerName: 'VinaAgr Export Co.',
                     priceFormatted: '',
-                    depositTerms: 'Cá»c 30% tận vườn',
-                    logistics: 'Tá»± mang xe cẩu Ä‘áº¿n bốc xếp'
+                    depositTerms: 'Cọc 30% tận vườn',
+                    logistics: 'Tự mang xe cẩu đến bốc xếp'
                 },
 
                 cropListings: [
                     {
                         id: 1,
                         code: 'SR-2026-01',
-                        title: 'Sáº§u RiÃªng Ri6 Xuáº¥t Kháº©u',
-                        farmerName: 'ChÃº Hai XoÃ n',
+                        title: 'Sầu Riêng Ri6 Xuất Khẩu',
+                        farmerName: 'Chú Hai Xoàn',
                         farmerPhone: '0913.882.112',
-                        quantity: '8 Táº¥n',
+                        quantity: '8 Tấn',
                         standard: 'VietGAP',
                         location: 'Cái Bè, Tiền Giang',
-                        askingPrice: '78.000Ä‘/kg',
+                        askingPrice: '78.000đ/kg',
                         status: 'bidding',
-                        statusText: 'Äang Nháº­n BÃ¡o GiÃ¡',
+                        statusText: 'Đang Nhận Báo Giá',
                         imageUrl: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400'
                     },
                     {
                         id: 2,
                         code: 'XC-2026-09',
-                        title: 'XoÃ i CÃ¡t HÃ²a Lá»™c Loáº¡i 1',
-                        farmerName: 'Tráº§n VÄƒn TÆ°Æ¡i',
+                        title: 'Xoài Cát Hòa Lộc Loại 1',
+                        farmerName: 'Trần Văn Tươi',
                         farmerPhone: '0988.334.901',
-                        quantity: '3.5 Táº¥n',
+                        quantity: '3.5 Tấn',
                         standard: 'GlobalGAP',
-                        location: 'Cao LÃ£nh, Äá»“ng ThÃ¡p',
-                        askingPrice: '62.000Ä‘/kg',
+                        location: 'Cao Lãnh, Đồng Tháp',
+                        askingPrice: '62.000đ/kg',
                         status: 'matched',
-                        statusText: 'Đã Chá»n GiÃ¡',
+                        statusText: 'Đã Chọn Giá',
                         imageUrl: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80&w=400'
                     },
                     {
                         id: 3,
                         code: 'TL-2026-15',
-                        title: 'Thanh Long Ruá»™t Äá»',
-                        farmerName: 'HTX Chá»£ Gáº¡o',
+                        title: 'Thanh Long Ruột Đỏ',
+                        farmerName: 'HTX Chợ Gạo',
                         farmerPhone: '0273.3812.99',
-                        quantity: '12 Táº¥n',
+                        quantity: '12 Tấn',
                         standard: 'VietGAP',
-                        location: 'Chá»£ Gáº¡o, Tiền Giang',
-                        askingPrice: '32.000Ä‘/kg',
+                        location: 'Chợ Gạo, Tiền Giang',
+                        askingPrice: '32.000đ/kg',
                         status: 'bidding',
-                        statusText: 'Äang Nháº­n BÃ¡o GiÃ¡',
+                        statusText: 'Đang Nhận Báo Giá',
                         imageUrl: 'https://images.unsplash.com/photo-1527325678964-54921641b921?auto=format&fit=crop&q=80&w=400'
                     }
                 ],
 
                 offersMatrix: {
                     1: [
-                        { id: 101, buyerName: 'CÃ´ng Ty NÃ´ng Sáº£n VinaAgr', companyType: 'Doanh Nghiá»‡p Xuáº¥t Kháº©u', rating: 4.9, reviewsCount: 128, priceFormatted: '85.000Ä‘ / kg', depositTerms: 'Cá»c 30% tận vườn sau khi kiá»ƒm hÃ ng', logistics: 'Tá»± Ä‘iá»u xe cẩu tận vườn bốc xếp', status: 'pending' },
-                        { id: 102, buyerName: 'ThÆ°Æ¡ng LÃ¡i HÃ¹ng Báº¿n Tre', companyType: 'ThÆ°Æ¡ng LÃ¡i Truyá»n Thá»‘ng', rating: 4.7, reviewsCount: 64, priceFormatted: '82.000Ä‘ / kg', depositTerms: 'Cá»c 20% ngay', logistics: 'NÃ´ng dÃ¢n há»— trá»£ váº­n chuyá»ƒn ra Ä‘Æ°á»ng lá»›n', status: 'pending' },
-                        { id: 103, buyerName: 'Há»£p TÃ¡c XÃ£ NÃ´ng Nghiá»‡p Xanh', companyType: 'HTX Thu Mua', rating: 4.5, reviewsCount: 32, priceFormatted: '78.000Ä‘ / kg', depositTerms: 'Thanh toÃ¡n 100% khi nháº­n hÃ ng', logistics: 'Giao tại kho HTX', status: 'pending' }
+                        { id: 101, buyerName: 'Công Ty Nông Sản VinaAgr', companyType: 'Doanh Nghiệp Xuất Khẩu', rating: 4.9, reviewsCount: 128, priceFormatted: '85.000đ / kg', depositTerms: 'Cọc 30% tận vườn sau khi kiểm hàng', logistics: 'Tự điều xe cẩu tận vườn bốc xếp', status: 'pending' },
+                        { id: 102, buyerName: 'Thương Lái Hùng Bến Tre', companyType: 'Thương Lái Truyền Thống', rating: 4.7, reviewsCount: 64, priceFormatted: '82.000đ / kg', depositTerms: 'Cọc 20% ngay', logistics: 'Nông dân hỗ trợ vận chuyển ra đường lớn', status: 'pending' },
+                        { id: 103, buyerName: 'Hợp Tác Xã Nông Nghiệp Xanh', companyType: 'HTX Thu Mua', rating: 4.5, reviewsCount: 32, priceFormatted: '78.000đ / kg', depositTerms: 'Thanh toán 100% khi nhận hàng', logistics: 'Giao tại kho HTX', status: 'pending' }
                     ],
                     2: [
-                        { id: 201, buyerName: 'Chuá»—i SiÃªu Thá»‹ Co.opmart', companyType: 'Há»‡ Thá»‘ng SiÃªu Thá»‹', rating: 5.0, reviewsCount: 210, priceFormatted: '68.000Ä‘ / kg', depositTerms: 'Cá»c 40%', logistics: 'Giao tại kho tá»•ng', status: 'accepted' }
+                        { id: 201, buyerName: 'Chuỗi Siêu Thị Co.opmart', companyType: 'Hệ Thống Siêu Thị', rating: 5.0, reviewsCount: 210, priceFormatted: '68.000đ / kg', depositTerms: 'Cọc 40%', logistics: 'Giao tại kho tổng', status: 'accepted' }
                     ],
                     3: [
-                        { id: 301, buyerName: 'Long ChÃ¢u Export', companyType: 'Xuáº¥t Kháº©u', rating: 4.8, reviewsCount: 89, priceFormatted: '35.000Ä‘ / kg', depositTerms: 'Cá»c 25%', logistics: 'Container láº¡nh Ä‘áº¿n vÆ°á»n', status: 'pending' }
+                        { id: 301, buyerName: 'Long Châu Export', companyType: 'Xuất Khẩu', rating: 4.8, reviewsCount: 89, priceFormatted: '35.000đ / kg', depositTerms: 'Cọc 25%', logistics: 'Container lạnh đến vườn', status: 'pending' }
                     ]
                 },
 
                 inspectionsList: [
                     {
                         id: 1,
-                        cropTitle: 'Sáº§u RiÃªng Ri6 (8 Táº¥n)',
-                        farmerName: 'ChÃº Hai XoÃ n',
+                        cropTitle: 'Sầu Riêng Ri6 (8 Tấn)',
+                        farmerName: 'Chú Hai Xoàn',
                         farmerPhone: '0913.882.112',
-                        buyerName: 'CÃ´ng Ty NÃ´ng Sáº£n VinaAgr',
+                        buyerName: 'Công Ty Nông Sản VinaAgr',
                         buyerPhone: '0903.998.111',
                         step: 2
                     }
@@ -914,16 +914,16 @@
                     this.currentCropOffers.forEach(o => o.status = 'pending');
                     offer.status = 'accepted';
                     this.selectedCrop.status = 'matched';
-                    alert(`ChÃºc má»«ng ChÃº Hai XoÃ n! ChÃº Ä‘Ã£ chá»n bÃ¡n cho ${offer.buyerName} vá»›i giÃ¡ ${offer.priceFormatted}. Chuyá»ƒn sang bÆ°á»›c Kháº£o SÃ¡t VÆ°á»n.`);
+                    alert(`Chúc mừng Chú Hai Xoàn! Chú đã chọn bán cho ${offer.buyerName} với giá ${offer.priceFormatted}. Chuyển sang bước Khảo Sát Vườn.`);
                     this.activePage = 'inspection';
                 },
 
                 advanceInspectionStep(inspection) {
                     if (inspection.step < 4) {
                         inspection.step += 1;
-                        alert('Đã cáº­p nháº­t tiáº¿n trÃ¬nh kháº£o sÃ¡t vÆ°á»n thÃ nh cÃ´ng!');
+                        alert('Đã cập nhật tiến trình khảo sát vườn thành công!');
                     } else {
-                        alert('Giao dá»‹ch Ä‘Ã£ hoÃ n táº¥t thÃ nh cÃ´ng!');
+                        alert('Giao dịch đã hoàn tất thành công!');
                     }
                 },
 
@@ -940,7 +940,7 @@
                     this.offersMatrix[cropId].unshift({
                         id: Date.now(),
                         buyerName: this.bidForm.buyerName,
-                        companyType: 'ThÆ°Æ¡ng Gia Thu Mua',
+                        companyType: 'Thương Gia Thu Mua',
                         rating: 5.0,
                         reviewsCount: 1,
                         priceFormatted: this.bidForm.priceFormatted,
@@ -949,7 +949,7 @@
                         status: 'pending'
                     });
                     this.showBidModal = false;
-                    alert('Đã gá»­i bÃ¡o giÃ¡ thu mua tá»›i NÃ´ng DÃ¢n thÃ nh cÃ´ng!');
+                    alert('Đã gửi báo giá thu mua tới Nông Dân thành công!');
                     this.activePage = 'farmer';
                     this.selectedCropId = cropId;
                 },
@@ -967,7 +967,7 @@
                         location: this.newForm.location,
                         askingPrice: this.newForm.askingPrice,
                         status: 'bidding',
-                        statusText: 'Äang Nháº­n BÃ¡o GiÃ¡',
+                        statusText: 'Đang Nhận Báo Giá',
                         imageUrl: 'https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&q=80&w=400'
                     });
                     this.offersMatrix[newId] = [];
@@ -978,7 +978,7 @@
             }
         }
 
-        // BIá»‚U Äá»’ BÃO CÃO ADMIN (CHART.JS)
+        // BIỂU ĐỒ BÁO CÁO ADMIN (CHART.JS)
         document.addEventListener('DOMContentLoaded', () => {
             const ctx = document.getElementById('adminChart').getContext('2d');
             new Chart(ctx, {
@@ -987,7 +987,7 @@
                     labels: ['15/10', '16/10', '17/10', '18/10', '19/10', '20/10'],
                     datasets: [
                         {
-                            label: 'GiÃ¡ Thu Mua Sáº§u RiÃªng Ri6 Trung BÃ¬nh (VNÄ/kg)',
+                            label: 'Giá Thu Mua Sầu Riêng Ri6 Trung Bình (VNĐ/kg)',
                             data: [75000, 78000, 80000, 82000, 84000, 85000],
                             borderColor: '#16a34a',
                             backgroundColor: 'rgba(22, 163, 74, 0.1)',
